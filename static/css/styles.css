@@ -1,0 +1,44 @@
+/* Reset some default styles */
+
+
+/* Header styles */
+header {
+    background-color: #D428D7; /* Adjust the background color as needed */
+    padding: 20px;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.Navbar a:hover {
+    background-color: #fff;
+    color: #F08080;
+}
+
+.btn_masuk {
+    background-color: #fff;
+    color: #F08080;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_masuk:hover {
+    background-color: #F08080;
+    color: #fff;
+}
+
+/* Main content styles */
