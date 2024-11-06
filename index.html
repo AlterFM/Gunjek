@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/styles.css">
+
     <title>GunJek</title>
 </head>
 <body>
     <header>
         <div class="Navbar">
-            <img src="./static/image/LOGO.png" alt="logo">
-            <a href="active" href="#beranda">Beranda</a>
-            <a href="active" href="#order">Order</a>
-            <a href="active" href="#driver">Driver</a>
-            <a href="active" href="#lokasi">Lokasi</a>
-            <a href="active" href="#bantuan">Bantuan</a>
+            <div class="logo">
+                <img src="./static/image/LOGO.png" alt="logo">
+            </div>
+            <ul class="listoflinks">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#driver">Driver</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#bantuan">Bantuan</a></li>
+              </ul>
+
             <button class="btn_masuk" onclick="window.location.href='login.html'">Masuk</button>
         </div>
-    </header>
+        <div class="topkampus">
+            <img src="./static/image/img1.png" alt="kampusa">
+            <img src="./static/image/img2.png" alt="kampusB">
 
-    <div>
-        <img src="./static/image/img1.png" alt="kampusa">
-        <img src="./static/image/img2.png" alt="kampusB">
-        <h1>Selamat datang di GunJek</h1>
-    </div>
+        </div>
+        <h1 class="welcome-text">Selamat datang di GUNJEK!</h1>
+
+    </header>
     <div>
         <h2>Gunadarma Ojek siap antar kamu keliling kampus! </h2>
         <p>bingung mau praktikum atau masuk kuliah beda gedung? order gunjek adalah solusinya! mudah cari teman tebengan tanpa harus bayar mahal </p>
