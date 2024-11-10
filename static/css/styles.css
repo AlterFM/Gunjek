@@ -264,7 +264,7 @@ header {
         text-align: center;
         width: auto;
         margin: auto;
-        background-color: #f8a743; /* Yellow background */
+        background-color: #FFBD59; /* Yellow background */
         padding-left: 22.3%;
         height: 126.063rem;
 
@@ -282,13 +282,12 @@ header {
         display: flex;
         align-items: flex-start; /* Menyusun elemen secara vertikal dari atas */
         margin-bottom: 20px;
-        border-bottom: 1px solid #f8a743;
+        border-bottom: 1px solid transparent;
         padding-bottom: 15px;
     }
     
     .location-info {
         flex: 1; /* Membuat elemen ini mengambil sisa ruang di sebelah gambar */
-        text-align: left;
     }
     
     .location-info h4 {
@@ -297,6 +296,7 @@ header {
         margin-left: 15%;
         color: #ffffff;
         padding: 10px;
+        text-align: left;
     }
     
     .location-info p {
@@ -305,21 +305,22 @@ header {
         color: #ffffff;
         margin-top: 5px;
         padding: 10px;
+        text-align: left;
     }
     
-    .btn-lainnya {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #ffffff;
-        color: #333;
+    .btn_lainnya {
+        background-color: #fff;
+        color: #FFBD59;
         border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        width: 152px;
+        height: 52px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 50%;
+        margin-top: 5%;
     }
     
-    .btn-lainnya:hover {
+    .btn_lainnya:hover {
         background-color: #e6e6e6;
     }
 
@@ -329,9 +330,9 @@ header {
         justify-content: center;
         align-items: center;
         padding: 20px;
-        background: linear-gradient(to top, #540088 40%, #f8a743);
+        background: linear-gradient(to top, #540088 40%, #FFBD59);
         color: white;
-        height: 54.75rem;
+        height: 60.813rem;
     }
     footer .logofooter {
         margin-bottom: 2rem;
@@ -368,12 +369,14 @@ header {
         margin-bottom: 2rem;
         font-weight: bold;
         font-size: 25px;
+        text-align: center;
     }
     
     footer p {
         margin: 5px 0;
         font-size: 25px;
         margin-top: 10%;
+        text-align: center;
         
 
     }
