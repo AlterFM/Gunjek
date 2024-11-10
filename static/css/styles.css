@@ -58,11 +58,8 @@ header {
 }
 
 .Navbar img{
-    border-radius: 50%;
-    background-color: #fff;
     width: 125px;
     height: 121px;
-    margin: auto;
     margin-left: 250px;
 
   }
@@ -269,6 +266,7 @@ header {
         margin: auto;
         background-color: #f8a743; /* Yellow background */
         padding-left: 22.3%;
+        height: 126.063rem;
 
     }
     
@@ -276,6 +274,8 @@ header {
         font-size: 40px;
         color: #000000; /* White text */
         margin-bottom: 20px;
+        padding-top: 7.438rem;
+        padding-bottom: 2rem;
     }
     
     .location-item {
@@ -283,7 +283,6 @@ header {
         align-items: flex-start; /* Menyusun elemen secara vertikal dari atas */
         margin-bottom: 20px;
         border-bottom: 1px solid #f8a743;
-        background-color: #D428D7;
         padding-bottom: 15px;
     }
     
@@ -297,7 +296,6 @@ header {
         margin-top: 15%;
         margin-left: 15%;
         color: #ffffff;
-        background-color: #000;
         padding: 10px;
     }
     
@@ -305,7 +303,6 @@ header {
         font-size: 15px;
         margin-left: 15%;
         color: #ffffff;
-        background-color: green;
         margin-top: 5px;
         padding: 10px;
     }
@@ -325,6 +322,62 @@ header {
     .btn-lainnya:hover {
         background-color: #e6e6e6;
     }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: linear-gradient(to top, #540088 40%, #f8a743);
+        color: white;
+        height: 54.75rem;
+    }
+    footer .logofooter {
+        margin-bottom: 2rem;
+        margin-left: -48%;
+    }
+    
+    footer img {
+        width: 16.625rem;
+        height: 15.938rem;
+
+    }
+    
+    footer ul {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1500px;
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    footer ul div {
+        display: flex;
+        flex-direction: column;
+
+    }
+    footer .sosmed img{
+        margin-bottom: 2rem;
+        height: 5.625rem;
+        width: 5.625rem;
+    }
+    
+    footer h4 {
+        margin-bottom: 2rem;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    footer p {
+        margin: 5px 0;
+        font-size: 25px;
+        margin-top: 10%;
+        
+
+    }
+    
     
     
 
