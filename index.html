@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/styles.css">
 
-    <title>GunJek</title>
+    <title>GunJek</title> 
 </head>
 <body>
     <header>
@@ -21,8 +21,34 @@
                 <li><a href="#lokasi">Lokasi</a></li>
                 <li><a href="#bantuan">Bantuan</a></li>
               </ul>
-
-            <button class="btn_masuk" onclick="window.location.href='login.html'">Masuk</button>
+            <div class="btn_masuk">
+                <button id="show-login">Masuk</button>
+            </div>
+            <div class="popup">
+                <div class="close-btn">&times;</div>
+                <div class="form">
+                    <h2>Masuk</h2>
+                    <img src="./static/image/LOGO.png" alt="logologin">
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-element">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <div class="form-element">
+                        <button>Sign in</button>
+                    </div>
+                    <div class="form-element">
+                        <a href="a">Forgot password</a>
+                    </div>
+                </div>
+            </div> 
         </div>
         <div class="topkampus">
             <img class="tkp1" src="./static/image/img1.png" alt="kampusa">
@@ -137,5 +163,6 @@
         </ul>
         <p>Gunadarma Ojek 2024</p>
     </footer>
+    <script src="./static/js/login.js"></script>
 </body>
 </html>
