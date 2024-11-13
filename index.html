@@ -38,13 +38,13 @@
                         <input type="password" id="password" placeholder="Masukkan kata sandi Anda">
                     </div>
                     <div class="form-element">
-                        <a href="a">Lupa kata sandi</a>
+                        <a href="a" class="lupa-sandi">Lupa kata sandi</a>
                     </div>
                     <div class="form-element">
                         <button>Masuk</button>
                     </div>
                     <div class="form-element">
-                        <a href="#" id="show-register">Daftar</a>
+                        <a href="#" id="show-register" class="klik_daftar">Daftar</a>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
@@ -70,13 +70,13 @@
                         <input type="password" id="password-confirm" placeholder="Masukkan kata sandi baru Anda">
                     </div>
                     <div class="form-element">
-                        <label for="unggah-ktm">Kartu Tanda Mahasiswa</label>
-                        <form action="/action_page.php">
+                        <form action="/action_page.php" method="post" enctype="multipart/form-data">
+                            <label for="myFile">Konfirmasi KTM</label>
                             <input type="file" id="myFile" name="filename">
-                            <input type="submit">
-                          </form>
-                        <input type="ktm" id="KTM" placeholder="Unggah KTM Anda">
+                            <input type="submit" value="Unggah">
+                        </form>
                     </div>
+                    
                     <div class="form-element">
                         <button>Daftar</button>
                     </div>
@@ -133,8 +133,6 @@
             </div>
         </div>
     </div>
-      
-
     <div class="daftardriver">
         <div>
             <p>Punya kendaraan? butuh tambahan<br>uang bensin? berangkat kampus<br>mau ditemenin?</p>
@@ -175,7 +173,6 @@
                 <button class="btn_lainnya">Lainnya</button>
             </div>
         </div>
-
     </div>
 
     <footer> 
@@ -204,4 +201,5 @@
         <p>Gunadarma Ojek 2024</p>
     </footer>
     <script src="./static/js/login.js"></script>
+</body>
 </html>

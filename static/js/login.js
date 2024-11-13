@@ -12,11 +12,11 @@ document.getElementById('show-register').addEventListener('click', function(even
 });
 
 // Jika Anda ingin menambahkan tombol kembali ke form login dari form daftar, tambahkan ini di form daftar
-const backToLoginLink = document.createElement('a');
-backToLoginLink.href = '#';
-backToLoginLink.textContent = 'Kembali ke Masuk';
-backToLoginLink.id = 'show-login';
-document.querySelector('.daftar-form').appendChild(backToLoginLink);
+// const backToLoginLink = document.createElement('a');
+// backToLoginLink.href = '#';
+// backToLoginLink.textContent = 'Kembali ke Masuk';
+// backToLoginLink.id = 'show-login';
+// document.querySelector('.daftar-form').appendChild(backToLoginLink);
 
 document.getElementById('show-login').addEventListener('click', function(event) {
     event.preventDefault(); // Mencegah link dari melakukan navigasi
@@ -24,11 +24,6 @@ document.getElementById('show-login').addEventListener('click', function(event) 
     document.getElementById('login-form').style.display = 'block'; // Tampilkan form login
 });
 // // Toggle masuk sebagai user/driver
-// function toggleMode() {
-//     const modeText = document.getElementById("mode-text");
-//     const isChecked = document.getElementById("mode-toggle").checked;
-//     modeText.textContent = isChecked ? "Masuk sebagai Driver" : "Masuk sebagai User";
-// }
 
 // Toggle login form
 function toggleModelogin() {
@@ -43,3 +38,5 @@ function toggleModedaftar() {
     const isChecked = document.getElementById("mode-toggle-register").checked;
     modeText.textContent = isChecked ? "Daftar sebagai Driver" : "Daftar sebagai User";
 }
+
+// Unggah KTM
