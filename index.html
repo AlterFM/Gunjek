@@ -48,10 +48,10 @@
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle" onclick="toggleMode()">
+                            <input type="checkbox" id="mode-toggle-login" onclick="toggleModelogin()">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text">Masuk sebagai User</span>
+                        <span id="mode-text-login">Masuk sebagai User</span>
                     </div>
                 </div>
                 <div class="daftar-form" id="register-form" style="display: none;">
@@ -70,14 +70,22 @@
                         <input type="password" id="password-confirm" placeholder="Masukkan kata sandi baru Anda">
                     </div>
                     <div class="form-element">
+                        <label for="unggah-ktm">Kartu Tanda Mahasiswa</label>
+                        <form action="/action_page.php">
+                            <input type="file" id="myFile" name="filename">
+                            <input type="submit">
+                          </form>
+                        <input type="ktm" id="KTM" placeholder="Unggah KTM Anda">
+                    </div>
+                    <div class="form-element">
                         <button>Daftar</button>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle" onclick="toggleMode()">
+                            <input type="checkbox" id="mode-toggle-register" onclick="toggleModedaftar()">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text">Daftar sebagai User</span>
+                        <span id="mode-text-register">Daftar sebagai User</span>
                     </div>
                 </div>
             </div>

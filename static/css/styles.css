@@ -251,6 +251,7 @@ input:checked + .slider:before {
 }
 
 .popup .daftar-form .form-element input[type="text"],
+.popup .daftar-form .form-element input[type="ktm"],
 .popup .daftar-form .form-element input[type="password"] {
     margin-top: 5px;
     display: block;
