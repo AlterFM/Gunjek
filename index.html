@@ -26,11 +26,11 @@
             </div>
             <div class="popup">
                 <div class="close-btn">&times;</div>
-                <div class="form">
+                <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
                     <img src="./static/image/LOGO.png" alt="logologin">
                     <div class="form-element">
-                        <label for="email">NPM</label>
+                        <label for="npm">NPM</label>
                         <input type="text" id="npm" placeholder="Masukkan NPM Anda">
                     </div>
                     <div class="form-element">
@@ -43,9 +43,8 @@
                     <div class="form-element">
                         <button>Masuk</button>
                     </div>
-
                     <div class="form-element">
-                        <a href="a">Daftar</a>
+                        <a href="#" id="show-register">Daftar</a>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
@@ -55,7 +54,33 @@
                         <span id="mode-text">Masuk sebagai User</span>
                     </div>
                 </div>
-            </div> 
+                <div class="daftar-form" id="register-form" style="display: none;">
+                    <h2>Daftar</h2>
+                    <img src="./static/image/LOGO.png" alt="logodaftar">
+                    <div class="form-element">
+                        <label for="npm">NPM</label>
+                        <input type="text" id="npm-register" placeholder="Masukkan NPM Anda">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Kata Sandi</label>
+                        <input type="password" id="password-register" placeholder="Buat kata sandi baru Anda">
+                    </div>
+                    <div class="form-element">
+                        <label for="password-confirm">Konfirmasi Kata Sandi</label>
+                        <input type="password" id="password-confirm" placeholder="Masukkan kata sandi baru Anda">
+                    </div>
+                    <div class="form-element">
+                        <button>Daftar</button>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="mode-toggle" onclick="toggleMode()">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="mode-text">Daftar sebagai User</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="topkampus">
             <img class="tkp1" src="./static/image/img1.png" alt="kampusa">
@@ -171,12 +196,4 @@
         <p>Gunadarma Ojek 2024</p>
     </footer>
     <script src="./static/js/login.js"></script>
-    <script>
-        function toggleMode() {
-            const modeText = document.getElementById("mode-text");
-            const isChecked = document.getElementById("mode-toggle").checked;
-            modeText.textContent = isChecked ? "Masuk sebagai Driver" : "Masuk sebagai User";
-        }
-    </script>
-</body>
 </html>
