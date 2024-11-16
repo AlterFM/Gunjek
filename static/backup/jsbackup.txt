@@ -11,6 +11,13 @@ document.getElementById('show-register').addEventListener('click', function(even
     document.getElementById('register-form').style.display = 'block'; // Tampilkan form daftar
 });
 
+// Jika Anda ingin menambahkan tombol kembali ke form login dari form daftar, tambahkan ini di form daftar
+// const backToLoginLink = document.createElement('a');
+// backToLoginLink.href = '#';
+// backToLoginLink.textContent = 'Kembali ke Masuk';
+// backToLoginLink.id = 'show-login';
+// document.querySelector('.daftar-form').appendChild(backToLoginLink);
+
 document.getElementById('show-login').addEventListener('click', function(event) {
     event.preventDefault(); // Mencegah link dari melakukan navigasi
     document.getElementById('register-form').style.display = 'none'; // Sembunyikan form daftar
