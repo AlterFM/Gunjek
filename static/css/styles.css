@@ -326,28 +326,43 @@ input:checked + .slider:before {
 }
 
 .welcome-text {
-    font-size: 36px; /* Adjust font size as needed */
+    font-size: 50px; /* Adjust font size as needed */
     color: #FFBD59; /* Set the text color to a golden yellow */
     letter-spacing: 2px; /* Add spacing between letters */
     text-align: center;
+    font-weight: bolder;
   }
 
 .gunjekorder {
-    text-align: right; 
     background: #fff;
     padding-top: 227px;
     height: 536px;
+    display: flex;
+    justify-content: center;
+
   }
-  h2 {
-    font-size: 24px;
-    padding-bottom: 35px;
-    margin-right: 350px;
-  }
-  p {
-    font-weight: lighter; 
-    margin-right: 350px;
-    padding-bottom: 33px;
-  }
+.location-ping {
+    width: auto;
+    height: 100%;
+    margin-right: 20px;
+    padding-bottom: 100px;
+
+}
+.gunjekorder .siap-antar {
+    text-align: right;
+    padding-left: 17.5%;
+}
+    h2 {
+        font-size: 35px;
+        padding-bottom: 35px;
+        margin: 0; 
+    }
+    p {
+        font-weight: lighter; 
+        font-size: 15px;
+        margin: 0; 
+        padding-bottom: 33px;
+    }
 
 .btn_order {
     background-color: #D428D7;
@@ -356,7 +371,6 @@ input:checked + .slider:before {
     border-radius: 5px;
     width: 152px;
     height: 52px;
-    margin-right: 350px;
 }
 
 .Pilih-gunjek {
