@@ -10,13 +10,14 @@
 </head>
 <body>
     <header>
+        
         <div class="Navbar"> 
             <div class="logo">
                 <img src="./static/image/LOGO.png" alt="logo">
             </div>
             <ul class="listoflinks">
                 <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#order">Order</a></li>
+                <li><a href="order.html">Order</a></li>
                 <li><a href="#driver">Driver</a></li>
                 <li><a href="#lokasi">Lokasi</a></li>
                 <li><a href="#bantuan">Bantuan</a></li>
@@ -26,10 +27,8 @@
             </div>
             <div class="popup">
                 <div class="close-btn">&times;</div>
+            
                 <!-- User Login Form -->
-                 <div class="login-for">
-
-                 </div>
                 <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
                     <img src="./static/image/LOGO.png" alt="logologin">
@@ -48,14 +47,14 @@
                         <button type="submit">Masuk</button>
                     </div>
                     <div class="form-element">
-                        <a href="#" id="show-register" class="klik_daftar">Daftar</a>
+                        <a href="#" class="klik_daftar" onclick="showForm('register')">Daftar</a>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle-login" onclick="toggleLoginMode()">
+                            <input type="checkbox" id="mode-toggle-login" onclick="showForm('driverLogin')">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text-login">Masuk sebagai User</span>
+                        <span id="mode-text-login">Masuk sebagai Driver</span>
                     </div>
                 </div>
             
@@ -72,21 +71,17 @@
                         <input type="password" id="driver-password" placeholder="Masukkan kata sandi Anda">
                     </div>
                     <div class="form-element">
-                        <label for="driver-nomor_kendaraan">Nomor Kendaraan</label>
-                        <input type="text" id="driver-nomorkendaraan" placeholder="Masukkan Nomor kendaraan Anda">
-                    </div>
-                    <div class="form-element">
                         <button type="submit">Masuk</button>
                     </div>
                     <div class="form-element">
-                        <a href="#" id="show-driver-register" class="klik_daftar">Daftar</a>
+                        <a href="#" class="klik_daftar" onclick="showForm('driverRegister')">Daftar</a>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle-driver" onclick="toggleLoginMode()">
+                            <input type="checkbox" id="mode-toggle-register" onclick="showForm('login')">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text-driver">Masuk sebagai Driver</span>
+                        < span id="mode-text-login">Masuk sebagai User</span>
                     </div>
                 </div>
             
@@ -118,17 +113,17 @@
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle-register" onclick="toggleRegisterMode()">
+                            <input type="checkbox" id="mode-toggle-register" onclick="showForm('driverRegister')">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text-register">Daftar sebagai User</span>
+                        <span id="mode-text-register">Daftar sebagai Driver</span>
                     </div>
                 </div>
             
                 <!-- Driver Registration Form -->
                 <div class="driver-register-form" id="driver-register-form" style="display: none;">
                     <h2>Daftar sebagai Driver</h2>
-                    <img src="./static/image /LOGO.png" alt="logodaftar-driver">
+                    <img src="./static/image/LOGO.png" alt="logodaftar-driver">
                     <div class="form-element">
                         <label for="driver-npm">NPM</label>
                         <input type="text" id="driver-npm" placeholder="Masukkan NPM Anda">
@@ -160,10 +155,14 @@
                         </form>
                     </div>
                     <div class="form-element">
-                        <button type="submit">Daftar sebagai Driver</button>
+                        <button type="submit">Daftar</button>
                     </div>
-                    <div class="form-element">
-                        <a href="#" id="show-user-register" class="klik_daftar">Daftar sebagai User</a>
+                    <div class="toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="mode-toggle-register" onclick="showForm('login')">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="mode-text-register">Daftar sebagai User</span>
                     </div>
                 </div>
             </div>

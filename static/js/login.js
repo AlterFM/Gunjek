@@ -16,20 +16,41 @@ document.getElementById('show-login').addEventListener('click', function(event) 
     document.getElementById('register-form').style.display = 'none'; // Sembunyikan form daftar
     document.getElementById('login-form').style.display = 'block'; // Tampilkan form login
 });
-// // Toggle masuk sebagai user/driver
+// // // Toggle masuk sebagai user/driver
 
-// Toggle login form
-function toggleModelogin() {
-    const modeText = document.getElementById("mode-text-login");
-    const isChecked = document.getElementById("mode-toggle-login").checked;
-    modeText.textContent = isChecked ? "Masuk sebagai Driver" : "Masuk sebagai User";
+function showForm(formToShow) {
+    const loginForm = document.getElementById('login-form');
+    const driverLoginForm = document.getElementById('driver-login-form');
+    const registerForm = document.getElementById('register-form');
+    const driverRegisterForm = document.getElementById('driver-register-form');
+    
+    // Sembunyikan semua form
+    loginForm.style.display = "none";
+    driverLoginForm.style.display = "none";
+    registerForm.style.display = "none";
+    driverRegisterForm.style.display = "none";
+
+    // Tampilkan form yang dipilih
+    switch (formToShow) {
+        case 'login':
+            loginForm.style.display = "block";
+            break;
+        case 'driverLogin':
+            driverLoginForm.style.display = "block";
+            break;
+        case 'register':
+            registerForm.style.display = "block";
+            break;
+        case 'driverRegister':
+            driverRegisterForm.style.display = "block";
+            break;
+    }
 }
 
-// Toggle daftar form
-function toggleModedaftar() {
-    const modeText = document.getElementById("mode-text-register");
-    const isChecked = document.getElementById("mode-toggle-register").checked;
-    modeText.textContent = isChecked ? "Daftar sebagai Driver" : "Daftar sebagai User";
+// Fungsi untuk mengatur form yang ditampilkan saat halaman dimuat
+function initializeForms() {
+    showForm('login'); // Menampilkan form login secara default
 }
 
-// Unggah KTM
+// Menginisialisasi saat halaman dimuat
+window.onload = initializeForms;

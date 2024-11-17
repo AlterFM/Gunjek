@@ -100,6 +100,7 @@ header {
     opacity 200ms ease-in-out 0ms,
     transform 200ms ease-in-out 0ms;
 }
+
 .popup.active {
     top: 50%;
     opacity: 1;
@@ -123,29 +124,46 @@ header {
     cursor: pointer;
 }
 
-.popup .login-form h2{
+.popup .login-form h2,
+.popup .daftar-form h2,
+.popup .driver-login-form h2,
+.popup .driver-register-form h2 {
     text-align: center;
     color: #222;
     margin: 10px 0px 20px;
     font-size: 25px;
 }
 
-.popup .login-form img{
+.popup .login-form img,
+.popup .daftar-form img,
+.popup .driver-login-form img,
+.popup .driver-register-form img {
     margin-left: 30%;
-
 }
 
-.popup .login-form .form-element {
+.popup .login-form .form-element,
+.popup .daftar-form .form-element,
+.popup .driver-login-form .form-element,
+.popup .driver-register-form .form-element {
     margin: 15px 0px;
 }
 
-.popup .login-form .form-element label {
+.popup .login-form .form-element label,
+.popup .daftar-form .form-element label,
+.popup .driver-login-form .form-element label,
+.popup .driver-register-form .form-element label {
     font-size: 14px;
     color: #222;
 }
 
 .popup .login-form .form-element input[type="text"],
-.popup .login-form .form-element input[type="password"] {
+.popup .login-form .form-element input[type="password"],
+.popup .daftar-form .form-element input[type="text"],
+.popup .daftar-form .form-element input[type="password"],
+.popup .driver-login-form .form-element input[type="text"],
+.popup .driver-login-form .form-element input[type="password"],
+.popup .driver-register-form .form-element input[type="text"],
+.popup .driver-register-form .form-element input[type="password"] {
     margin-top: 5px;
     display: block;
     width: 100%;
@@ -155,7 +173,10 @@ header {
     border-radius: 5px;
 }
 
-.popup .login-form .form-element button{
+.popup .login-form .form-element button,
+.popup .daftar-form .form-element button,
+.popup .driver-login-form .form-element button,
+.popup .driver-register-form .form-element button {
     width: 100%;
     height: 40px;
     border: none;
@@ -167,7 +188,8 @@ header {
     cursor: pointer;
 }
 
-.popup .login-form .form-element .lupa-sandi{
+.popup .login-form .form-element .lupa-sandi,
+.popup .daftar-form .form-element a {
     display: block;
     text-align: right;
     font-size: 15px;
@@ -175,7 +197,7 @@ header {
     text-decoration: none;
     font-weight: 600;
     max-width: fit-content;
-} 
+}
 
 .klik_daftar {
     width: 100%;
@@ -193,6 +215,7 @@ header {
     font-weight: normal;
 }
 
+/* Styling untuk switch toggle */
 .switch {
     position: relative;
     display: inline-block;
@@ -204,7 +227,7 @@ header {
 .switch input {
     opacity: 0;
     width: 0;
-    height: 0;
+ height: 0;
 }
 
 .slider {
@@ -239,66 +262,14 @@ input:checked + .slider:before {
     transform: translateX(25px);
 }
 
-/* Styling for mode text */
-#mode-text {
+/* Styling untuk mode text */
+#mode-text-login,
+#mode-text-register {
     font-size: 14px;
     color: #333;
 }
-/* end login popup */
-/* Daftar Form */
-.popup .daftar-form h2 {
-    text-align: center;
-    color: #222;
-    margin: 10px 0px 20px;
-    font-size: 25px;
-}
 
-.popup .daftar-form img {
-    margin-left: 30%;
-}
-
-.popup .daftar-form .form-element {
-    margin: 15px 0px;
-}
-
-.popup .daftar-form .form-element label {
-    font-size: 14px;
-    color: #222;
-}
-
-.popup .daftar-form .form-element input[type="text"],
-.popup .daftar-form .form-element input[type="ktm"],
-.popup .daftar-form .form-element input[type="password"] {
-    margin-top: 5px;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-}
-
-.popup .daftar-form .form-element button {
-    width: 100%;
-    height: 40px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    background: #D428D7;
-    color: #f5f5f5;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.popup .daftar-form .form-element a {
-    display: block;
-    text-align: right;
-    font-size: 15px;
-    color: #222;
-    text-decoration: none;
-    font-weight: 600;
-    max-width: fit-content;
-}
+/* End of CSS for forms and toggle switch */
 /* end daftar form */
 /* Upload KTM */ 
 
