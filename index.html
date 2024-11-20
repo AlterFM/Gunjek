@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/styles.css">
-
     <title>GunJek</title> 
 </head>
 <body>
@@ -16,9 +15,9 @@
                 <img src="./static/image/LOGO.png" alt="logo">
             </div>
             <ul class="listoflinks">
-                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="index.html">Beranda</a></li>
                 <li><a href="order.html">Order</a></li>
-                <li><a href="#driver">Driver</a></li>
+                <li><a href="driver.html">Driver</a></li>
                 <li><a href="#lokasi">Lokasi</a></li>
                 <li><a href="#bantuan">Bantuan</a></li>
               </ul>
@@ -78,10 +77,10 @@
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle-register" onclick="showForm('login')">
+                            <input type="checkbox" id="mode-toggle-driver-login" onclick="showForm('login')">
                             <span class="slider round"></span>
                         </label>
-                        < span id="mode-text-login">Masuk sebagai User</span>
+                        <span id="mode-text-driver-login">Masuk sebagai User</span>
                     </div>
                 </div>
             
@@ -106,6 +105,8 @@
                             <label for="myFile">Konfirmasi KTM</label>
                             <input type="file" id="myFile" name="filename">
                             <input type="submit" value="Unggah">
+                            <span class="icon-plus">+</span>
+                            <span class="Upload-text">Unggah KTM Anda</span>
                         </form>
                     </div>
                     <div class="form-element">
@@ -159,10 +160,10 @@
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
-                            <input type="checkbox" id="mode-toggle-register" onclick="showForm('login')">
+                            <input type="checkbox" id="mode-toggle-driver-registerr" onclick="showForm('login')">
                             <span class="slider round"></span>
                         </label>
-                        <span id="mode-text-register">Daftar sebagai User</span>
+                        <span id="mode-text-driver-register">Daftar sebagai User</span>
                     </div>
                 </div>
             </div>

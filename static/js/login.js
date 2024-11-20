@@ -54,3 +54,36 @@ function initializeForms() {
 
 // Menginisialisasi saat halaman dimuat
 window.onload = initializeForms;
+
+// Fungsi untuk mengatur form berdasarkan toggle switch di login
+function toggleLoginForm(isDriver) {
+    if (isDriver) {
+        showForm('driverLogin'); // Tampilkan form driver login
+    } else {
+        showForm('login'); // Tampilkan form user login
+    }
+}
+
+// Fungsi untuk mengatur form berdasarkan toggle switch di registrasi
+function toggleRegisterForm(isDriver) {
+    if (isDriver) {
+        showForm('driverRegister'); // Tampilkan form driver register
+    } else {
+        showForm('register'); // Tampilkan form user register
+    }
+}
+
+// Tambahkan event listener untuk toggle switch di login
+document.getElementById('mode-toggle-login').addEventListener('change', function() {
+    toggleLoginForm(this.checked);
+});
+
+// Tambahkan event listener untuk toggle switch di registrasi
+document.getElementById('mode-toggle-register').addEventListener('change', function() {
+    toggleRegisterForm(this.checked);
+});
+
+// Tambahkan event listener untuk toggle switch di driver registration
+document.getElementById('mode-toggle-driver-register').addEventListener('change', function() {
+    toggleRegisterForm(!this.checked); // Menggunakan negasi untuk mengalihkan
+});
