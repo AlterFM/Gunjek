@@ -22,7 +22,7 @@ body {
 }
 header{
     background-color: #D428D7;
-    padding: 20px;
+    /* padding: 20px; */
 }
 .Navbar {
     display: flex;
@@ -55,12 +55,49 @@ header{
     width: 125px;
     height: 121px;
  }
-.Navbar .logo{
+/* .Navbar .logo{
     margin-left: 250px;
- }
+ } */
 
 .profile-driver img{
     width: 100%;
     height: auto;
+
+}
+/* Daftar Perjalanan */
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: #D428D7;
+
+}
+.container1{
+    background-color: #fff;
+    border: 0.2rem;
+    border-radius: 5px;
+    padding: 5px;
+    width: 481px;
+    height: 510px;
+    padding: 20px;
+    justify-items: auto;
+    gap: 10px;
+    
+}
+.container1 .list-aktif1{
+    border: 0.2rem solid ;
+    border-radius: 10px;
+    box-shadow: 10px;
+    background-color: #EFEFEF;
+    width: 445px;
+    height: 89px;
+    font-size: 13px;
+    display: flex;
+    
+    
+}
+.container2{
+    background-color: aquamarine;
+    width: 481px;
+    height: 619px;
 
 }

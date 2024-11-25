@@ -15,7 +15,7 @@
             </div>
             <ul class="listoflinks">
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="orderuser.html">Order</a></li>
+                <li><a href="order.html">Order</a></li>
                 <li><a href="driver.html">Driver</a></li>
                 <li><a href="#lokasi">Lokasi</a></li>
                 <li><a href="#bantuan">Bantuan</a></li>
@@ -25,6 +25,108 @@
             </div>
         </div>
     </header>
-    
+    <div class="container">
+        <div class="container1">
+            <div class="list-aktif1">
+                <div class="daftar_perjalanan">
+                    <img src="./static/image/helmhitam.png" alt="logoperjalanan">
+                </div>
+                <div class="from-to">
+                    <p><strong>From :</strong> Kampus E</p>
+                    <p><strong>To :</strong> Kampus F8</p>
+                </div>
+                <div class="details">
+                    <p class="time">11.50</p>
+                    <p><strong>Rp 7000</strong></p>
+                </div>
+                <p class="note_gender">Khusus Pria/Wanita</p>
+            </div>
+            <div class="list-aktif1">
+                <div class="daftar_perjalanan">
+                    <img src="./static/image/helmhitam.png" alt="logoperjalanan">
+                </div>
+                <div class="from-to">
+                    <p><strong>From :</strong> Kampus E</p>
+                    <p><strong>To :</strong> Kampus F8</p>
+                </div>
+                <div class="details">
+                    <p class="time">11.50</p>
+                    <p><strong>Rp 7000</strong></p>
+                </div>
+                <p class="note_gender">Khusus Pria/Wanita</p>
+            </div>
+            <div class="list-aktif1">
+                <div class="daftar_perjalanan">
+                    <img src="./static/image/helmhitam.png" alt="logoperjalanan">
+                </div>
+                <div class="from-to">
+                    <p><strong>From :</strong> Kampus E</p>
+                    <p><strong>To :</strong> Kampus F8</p>
+                </div>
+                <div class="details">
+                    <p class="time">11.50</p>
+                    <p><strong>Rp 7000</strong></p>
+                </div>
+                <p class="note_gender">Khusus Pria/Wanita</p>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="history">
+                <div class="card">
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="">
+                        </div>
+                        <div class="from-to">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p><strong>To :</strong> Kampus F8</p>
+                        </div>
+                        <div class="details">
+                            <p class="time">11.50</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <div class="tabs">
+                    <button class="tab active" id="order-tab">Order</button>
+                    <button class="tab" id="history-tab">Riwayat</button>
+                </div>
+                <form id="order-form">
+                    <label for="destination">Tujuan</label>
+                    <select id="destination">
+                        <option value="" disabled selected>Pilih tujuan</option>
+                    </select>
+                    
+                    <label for="pickup">Penjemputan</label>
+                    <select id="pickup">
+                        <option value="" disabled selected>Pilih penjemputan</option>
+                    </select>
+                    
+                    <label for="travel-date">Waktu Perjalanan</label>
+                    <div class="travel-time">
+                        <input type="date" id="travel-date">
+                        <input type="time" id="travel-time">
+                    </div>
+                    
+                    <label for="tariff">Tarif</label>
+                    <input type="text" id="tariff" placeholder="Masukkan tarif">
+                    
+                    <label for="notes">Catatan</label>
+                    <textarea id="notes" rows="3"></textarea>
+                    
+                    <button type="submit" class="btn">Buat</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+
+
+
+
+      <script src="./static/js/drvier.js"></script>    
 </body>
 </html>
