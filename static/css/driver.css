@@ -69,35 +69,142 @@ header{
     display: flex;
     justify-content: center;
     background-color: #D428D7;
-
 }
 .container1{
     background-color: #fff;
-    border: 0.2rem;
-    border-radius: 5px;
-    padding: 5px;
     width: 481px;
     height: 510px;
     padding: 20px;
-    justify-items: auto;
-    gap: 10px;
+    border-radius: 0.5rem;
     
 }
 .container1 .list-aktif1{
-    border: 0.2rem solid ;
-    border-radius: 10px;
-    box-shadow: 10px;
+    display: flex;
     background-color: #EFEFEF;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin-bottom: 0.625rem;
     width: 445px;
     height: 89px;
     font-size: 13px;
-    display: flex;
-    
-    
 }
-.container2{
-    background-color: aquamarine;
+
+.container2 {
+    background-color: #e960f2; /* Warna dasar container */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 481px;
     height: 619px;
+}
 
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: bka;
+}
+
+.tab {
+    background-color: #bd39ba; /* Warna tombol tidak aktif */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.tab.active {
+    background-color: #73268c; /* Warna tombol aktif */
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f3d1f8;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form .travel-time {
+    display: flex;
+    gap: 10px;
+}
+
+form .travel-time input {
+    flex: 1;
+}
+
+.btn {
+    background-color: white;
+    color: #d042dc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #f3d1f8;
+}
+
+/* Riwayat Card */
+.history {
+    display: none; /* Default tidak ditampilkan */
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f3d1f8;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-content img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.from-to p,
+.details p,
+.note_gender {
+    margin: 0;
+    color: #4e4e4e;
+}
+
+.note_gender {
+    font-size: 12px;
+    text-align: right;
+    color: #7d7d7d;
 }

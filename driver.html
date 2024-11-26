@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./static/css/driver.css">
     <title>Driver</title>
 </head>
+
 <body>
     <header>
         <div class="Navbar"> 
@@ -28,49 +29,53 @@
     <div class="container">
         <div class="container1">
             <div class="list-aktif1">
-                <div class="daftar_perjalanan">
+                <div class="helmdriver">
                     <img src="./static/image/helmhitam.png" alt="logoperjalanan">
                 </div>
                 <div class="from-to">
                     <p><strong>From :</strong> Kampus E</p>
-                    <p><strong>To :</strong> Kampus F8</p>
+                    <p class="time">11.50</p>
+                    <p class="note_gender">Khusus Pria/Wanita</p>
                 </div>
                 <div class="details">
-                    <p class="time">11.50</p>
+                    <p><strong>To :</strong> Kampus F8</p>
                     <p><strong>Rp 7000</strong></p>
                 </div>
-                <p class="note_gender">Khusus Pria/Wanita</p>
             </div>
             <div class="list-aktif1">
-                <div class="daftar_perjalanan">
+                <div class="helmdriver">
                     <img src="./static/image/helmhitam.png" alt="logoperjalanan">
                 </div>
                 <div class="from-to">
                     <p><strong>From :</strong> Kampus E</p>
-                    <p><strong>To :</strong> Kampus F8</p>
+                    <p class="time">11.50</p>
+                    <p class="note_gender">Khusus Pria/Wanita</p>
                 </div>
                 <div class="details">
-                    <p class="time">11.50</p>
+                    <p><strong>To :</strong> Kampus F8</p>
                     <p><strong>Rp 7000</strong></p>
                 </div>
-                <p class="note_gender">Khusus Pria/Wanita</p>
             </div>
             <div class="list-aktif1">
-                <div class="daftar_perjalanan">
+                <div class="helmdriver">
                     <img src="./static/image/helmhitam.png" alt="logoperjalanan">
                 </div>
                 <div class="from-to">
                     <p><strong>From :</strong> Kampus E</p>
-                    <p><strong>To :</strong> Kampus F8</p>
+                    <p class="time">11.50</p>
+                    <p class="note_gender">Khusus Pria/Wanita</p>
                 </div>
                 <div class="details">
-                    <p class="time">11.50</p>
+                    <p><strong>To :</strong> Kampus F8</p>
                     <p><strong>Rp 7000</strong></p>
                 </div>
-                <p class="note_gender">Khusus Pria/Wanita</p>
             </div>
         </div>
         <div class="container2">
+            <div class="tabs">
+                <button class="tab active" id="order-tab">Order</button>
+                <button class="tab" id="history-tab">Riwayat</button>
+            </div>
             <div class="history">
                 <div class="card">
                     <div class="card-content">
@@ -90,21 +95,15 @@
                 </div>
             </div>
             <div class="form-section">
-                <div class="tabs">
-                    <button class="tab active" id="order-tab">Order</button>
-                    <button class="tab" id="history-tab">Riwayat</button>
-                </div>
                 <form id="order-form">
                     <label for="destination">Tujuan</label>
                     <select id="destination">
-                        <option value="" disabled selected>Pilih tujuan</option>
+                        <option value="" selected>Pilih tujuan</option>
                     </select>
-                    
                     <label for="pickup">Penjemputan</label>
                     <select id="pickup">
-                        <option value="" disabled selected>Pilih penjemputan</option>
+                        <option value="" selected>Pilih penjemputan</option>
                     </select>
-                    
                     <label for="travel-date">Waktu Perjalanan</label>
                     <div class="travel-time">
                         <input type="date" id="travel-date">
@@ -126,7 +125,7 @@
 
 
 
-
+<!-- javascript -->
       <script src="./static/js/drvier.js"></script>    
 </body>
 </html>
