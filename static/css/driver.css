@@ -19,6 +19,7 @@
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    background-color: #D428D7;
 }
 header{
     background-color: #D428D7;
@@ -26,7 +27,7 @@ header{
 }
 .Navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -55,30 +56,27 @@ header{
     width: 125px;
     height: 121px;
  }
-/* .Navbar .logo{
-    margin-left: 250px;
- } */
 
 .profile-driver img{
     width: 100%;
     height: auto;
-
 }
 /* Daftar Perjalanan */
-.container{
+.container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #D428D7;
 }
-.container1{
+
+.container1 {
     background-color: #fff;
     width: 481px;
-    height: 510px;
+    height: 580px;
     padding: 20px;
     border-radius: 0.5rem;
-    
 }
-.container1 .list-aktif1{
+
+.container1 .list-aktif1 {
     display: flex;
     background-color: #EFEFEF;
     border: 1px solid #ddd;
@@ -87,39 +85,115 @@ header{
     width: 445px;
     height: 89px;
     font-size: 13px;
+    justify-content: space-evenly;
+}
+.list-driver p{
+    padding: 6px;
+}
+
+.helmdriver {
+    flex-shrink: 0; 
+    padding-top: 5%;
+}
+.passenger-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.passenger-info {
+    display: flex;
+    align-items: center;
+}
+
+.passenger-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.passenger-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.passenger-actions .accept-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.passenger-actions .reject-btn {
+    background-color: #f44336;
+    color: white;
 }
 
 .container2 {
     background-color: #e960f2; /* Warna dasar container */
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 481px;
-    height: 619px;
+    height: 580px;
+    font-size: 15px;
 }
-
+/* button */
 .tabs {
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* Membagi tombol sama rata */
     margin-bottom: 20px;
-    background-color: bka;
+    background-color: #e960f2; /* Warna latar belakang container */
+
 }
 
 .tab {
-    background-color: #bd39ba; /* Warna tombol tidak aktif */
+    position: relative;
+    background-color: transparent; /* Transparan agar mengikuti latar belakang */
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+    padding: 10px 80px; /* Atur padding untuk proporsi */
     font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
 .tab.active {
-    background-color: #73268c; /* Warna tombol aktif */
+    color: white; /* Warna teks tetap putih untuk tab aktif */
 }
 
+.tab:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px; /* Ketebalan garis bawah */
+    background-color: white; /* Warna garis bawah */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tab.active:after {
+    transform: scaleX(1); /* Aktifkan garis bawah */
+}
+
+.tab:hover {
+    color: #f3d1f8; /* Warna teks saat hover */
+}
+
+.tab:hover:after {
+    transform: scaleX(1); /* Animasi garis bawah saat hover */
+}
+/* end of order riwayat  */
 .form-section {
     display: flex;
     flex-direction: column;
@@ -164,6 +238,7 @@ form .travel-time input {
     cursor: pointer;
     font-weight: 700;
     transition: background-color 0.3s;
+    
 }
 
 .btn:hover {
@@ -172,39 +247,55 @@ form .travel-time input {
 
 /* Riwayat Card */
 .history {
-    display: none; /* Default tidak ditampilkan */
+    display: none; 
     margin-top: 20px;
 }
 
 .card {
-    background-color: #f3d1f8;
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 0.25rem;
     padding: 10px;
     margin-bottom: 10px;
+    height: 483px;
 }
 
 .card-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    background-color: #EFEFEF;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin-bottom: 0.625rem;
+    width: 420px;
+    height: 89px;
+    font-size: 13px;
+    justify-content: space-evenly;
+    padding-top: 5%;
 }
 
-.card-content img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+/* Footer */
+footer{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    padding: 10%;
 }
-
-.from-to p,
-.details p,
-.note_gender {
-    margin: 0;
-    color: #4e4e4e;
-}
-
-.note_gender {
-    font-size: 12px;
-    text-align: right;
-    color: #7d7d7d;
-}
+/* setetelah terima */
+.order-details {
+    background-color: #FFD700; /* Yellow background */
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .order-details span {
+    font-weight: bold;
+  }
+  
+  .btn {
+    background-color: #D81B60; /* Pink button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }

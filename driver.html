@@ -28,47 +28,35 @@
     </header>
     <div class="container">
         <div class="container1">
-            <div class="list-aktif1">
-                <div class="helmdriver">
-                    <img src="./static/image/helmhitam.png" alt="logoperjalanan">
-                </div>
-                <div class="from-to">
-                    <p><strong>From :</strong> Kampus E</p>
-                    <p class="time">11.50</p>
-                    <p class="note_gender">Khusus Pria/Wanita</p>
-                </div>
-                <div class="details">
-                    <p><strong>To :</strong> Kampus F8</p>
-                    <p><strong>Rp 7000</strong></p>
-                </div>
+            <div>
+                <h2>List Penumpang</h2>
             </div>
             <div class="list-aktif1">
                 <div class="helmdriver">
                     <img src="./static/image/helmhitam.png" alt="logoperjalanan">
                 </div>
-                <div class="from-to">
+                <div class="list-driver">
                     <p><strong>From :</strong> Kampus E</p>
                     <p class="time">11.50</p>
                     <p class="note_gender">Khusus Pria/Wanita</p>
                 </div>
-                <div class="details">
+                <div class="list-driver">
                     <p><strong>To :</strong> Kampus F8</p>
-                    <p><strong>Rp 7000</strong></p>
+                    <p><strong>Rp 700Z0</strong></p>
                 </div>
             </div>
-            <div class="list-aktif1">
-                <div class="helmdriver">
-                    <img src="./static/image/helmhitam.png" alt="logoperjalanan">
+            <div id="passenger-list-container" class="passenger-list-container">
+                <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
+            </div>
+            <div id="order-details-container" class="order-details">
+                <div>
+                    <h3>Order</h3>
                 </div>
-                <div class="from-to">
-                    <p><strong>From :</strong> Kampus E</p>
-                    <p class="time">11.50</p>
-                    <p class="note_gender">Khusus Pria/Wanita</p>
-                </div>
-                <div class="details">
-                    <p><strong>To :</strong> Kampus F8</p>
-                    <p><strong>Rp 7000</strong></p>
-                </div>
+                <p><strong>Nama:</strong> <span id="order-name"></span></p>
+                <p><strong>Tujuan:</strong> <span id="order-destination"></span></p>
+                <p><strong>Waktu Penjemputan:</strong> <span id="order-time"></span></p>
+                <p><strong>Tarif:</strong> <span id="order-tariff"></span></p>
+                <button id="complete-order-btn" class="btn">Selesai</button>
             </div>
         </div>
         <div class="container2">
@@ -80,17 +68,45 @@
                 <div class="card">
                     <div class="card-content">
                         <div>
-                            <img src="./static/image/user_male.png" alt="">
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
                         </div>
-                        <div class="from-to">
+                        <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
-                            <p><strong>To :</strong> Kampus F8</p>
-                        </div>
-                        <div class="details">
                             <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
                             <p><strong>Rp 7000</strong></p>
                         </div>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,7 +114,7 @@
                 <form id="order-form">
                     <label for="destination">Tujuan</label>
                     <select id="destination">
-                        <option value="" selected>Pilih tujuan</option>
+                        <option value="" selected><br>Pilih tujuan</option>
                     </select>
                     <label for="pickup">Penjemputan</label>
                     <select id="pickup">
@@ -109,7 +125,6 @@
                         <input type="date" id="travel-date">
                         <input type="time" id="travel-time">
                     </div>
-                    
                     <label for="tariff">Tarif</label>
                     <input type="text" id="tariff" placeholder="Masukkan tarif">
                     
@@ -118,9 +133,14 @@
                     
                     <button type="submit" class="btn">Buat</button>
                 </form>
+
+                
             </div>
         </div>
     </div>
+    <footer>
+        <p>Gunadarma Ojek 2024</p>
+    </footer>
         
 
 
