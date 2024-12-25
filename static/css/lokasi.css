@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%; 
+    }
+}
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    background-color: #D428D7;
+}
+header{
+    background-color: #D428D7;
+    /* padding: 20px; */
+}
+.Navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.listoflinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.listoflinks li {
+    margin-right: 20px;
+}
+
+.listoflinks a {
+    text-decoration: none;
+    font-size: 15;
+    color: #fff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 512px;
+    height: 18px;
+}
+
+.Navbar img{
+    width: 125px;
+    height: 121px;
+ }
+
+.profile-driver img{
+    width: 100%;
+    height: auto;
+}
+
+.locations-section {
+    text-align: center;
+    width: auto;
+    margin: auto;
+    background-color: #FFBD59; /* Yellow background */
+    padding-left: 22.3%;
+    height: 230rem;
+
+}
+
+.locations-section h2 {
+    font-size: 40px;
+    color: #000000; /* White text */
+    margin-bottom: 20px;
+    padding-top: 7.438rem;
+    padding-bottom: 2rem;
+}
+
+.location-item {
+    display: flex;
+    align-items: flex-start; /* Menyusun elemen secara vertikal dari atas */
+    margin-bottom: 20px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 15px;
+}
+.location-item img {
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.location-info {
+    flex: 1; /* Membuat elemen ini mengambil sisa ruang di sebelah gambar */
+}
+
+.location-info h4 {
+    font-size: 25px;
+    margin-top: 15%;
+    margin-left: 15%;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.location-info p {
+    font-size: 15px;
+    margin-left: 15%;
+    color: #ffffff;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to top, #540088 40%, #FFBD59);
+    color: white;
+    height: 60.813rem;
+}
+footer .logofooter {
+    margin-bottom: 2rem;
+    margin-left: -48%;
+}
+
+footer img {
+    width: 16.625rem;
+    height: 15.938rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1500px;
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul div {
+    display: flex;
+    flex-direction: column;
+
+}
+footer .sosmed img{
+    margin-bottom: 2rem;
+    height: 5.625rem;
+    width: 5.625rem;
+}
+
+footer h4 {
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 25px;
+    margin-top: 10%;
+    text-align: center;
+}

@@ -18,8 +18,8 @@
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="order.html">Order</a></li>
                 <li><a href="driver.html">Driver</a></li>
-                <li><a href="#lokasi">Lokasi</a></li>
-                <li><a href="#bantuan">Bantuan</a></li>
+                <li><a href="lokasi.html">Lokasi</a></li>
+                <li><a href="helpuser.html">Bantuan</a></li>
               </ul>
             <div class="profile-user">
                 <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
@@ -155,12 +155,35 @@
                     </div>
                     <div class="pesan-btn">
                         <button type="submit">Pesan</button>
+
                     </div>
                 </div>
-          
                 <!-- Additional list-aktif1 items will be appended here dynamically -->
             </div>
             <!-- Additional rides -->
+            <div class="active-order" style="display: none;">
+                <div class="order-awaiting">
+                    <h3>Pesanan anda sedang diproses</h3>
+                </div>
+                <div class="order-accepted">
+                    <h3>Pesanan diterima, pengemudi menuju tempat anda!</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-info1">
+                        <p><strong>Dari:</strong> <span id="active-from"></span></p>
+                        <img src="./static/image/order_aktif.png" alt="order_aktif">
+                        <p><strong>Menuju:</strong> <span id="active-to"></span></p>
+                    </div>
+                    <div class="order-info2">
+                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
+                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
+                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
+                        <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
+                    </div>
+                </div>
+                <button class="cancel-btn" id="cancel-order">Batalkan Pesanan</button>
+            </div>
+            
         </div>
         <div class="container2">
             <div class="tabs">
@@ -169,6 +192,76 @@
             </div>
             <div class="history">
                 <div class="card">
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div>
                             <img src="./static/image/user_male.png" alt="profil_user_riwayat">
