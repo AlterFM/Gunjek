@@ -28,9 +28,7 @@
     </header>
     <div class="container">
         <div class="container1">
-            <div>
-                <h2>List Penumpang</h2>
-            </div>
+            <h2>List Penumpang</h2>
             <div class="list-aktif1">
                 <div class="helmdriver">
                     <img src="./static/image/helmhitam.png" alt="logoperjalanan">
@@ -48,16 +46,26 @@
             <div id="passenger-list-container" class="passenger-list-container">
                 <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
             </div>
-            <div id="order-details-container" class="order-details">
-                <div>
-                    <h3>Order</h3>
+            <div class="active-order" style="display: none;">
+                <div class="order-accepted">
+                    <h3>Pesanan Aktif</h3>
                 </div>
-                <p><strong>Nama:</strong> <span id="order-name"></span></p>
-                <p><strong>Tujuan:</strong> <span id="order-destination"></span></p>
-                <p><strong>Waktu Penjemputan:</strong> <span id="order-time"></span></p>
-                <p><strong>Tarif:</strong> <span id="order-tariff"></span></p>
-                <button id="complete-order-btn" class="btn">Selesai</button>
+                <div class="order-details">
+                    <div class="order-info1">
+                        <p><strong>Dari:</strong> <span id="active-from"></span></p>
+                        <img src="./static/image/order_aktif.png" alt="order_aktif">
+                        <p><strong>Menuju:</strong> <span id="active-to"></span></p>
+                    </div>
+                    <div class="order-info2">
+                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
+                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
+                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
+                        <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
+                    </div>
+                </div>
+                <button class="finish-btn" id="finish-order">Selesai</button>
             </div>
+
         </div>
         <div class="container2">
             <div class="tabs">
@@ -67,9 +75,7 @@
             <div class="history">
                 <div class="card">
                     <div class="card-content">
-                        <div>
-                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
-                        </div>
+                        <img src="./static/image/user_male.png" alt="profil_user_riwayat">
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
                             <p class="time">11.50</p>
@@ -81,9 +87,7 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <div>
-                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
-                        </div>
+                        <img src="./static/image/user_male.png" alt="profil_user_riwayat">
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
                             <p class="time">11.50</p>
@@ -95,9 +99,31 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <div>
-                            <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
                         </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <img src="./static/image/user_male.png" alt="profil_user_riwayat">
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <img src="./static/image/user_male.png" alt="profil_user_riwayat">
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
                             <p class="time">11.50</p>
@@ -133,15 +159,12 @@
                     
                     <button type="submit" class="btn">Buat</button>
                 </form>
-
-                
             </div>
         </div>
     </div>
     <footer>
-        <p>Gunadarma Ojek 2024</p>
+        <p>Gunjek 2025</p>
     </footer>
-        
 <!-- javascript -->
       <script src="./static/js/drvier.js"></script>    
 </body>

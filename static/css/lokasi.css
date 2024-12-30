@@ -19,16 +19,20 @@
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    background-color: #D428D7;
 }
-header{
-    background-color: #D428D7;
-    /* padding: 20px; */
+header {
+    background-color: #D428D7; /* Adjust the background color as needed */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
+
 .Navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    padding-right: 45px;
+
 }
 
 .listoflinks {
@@ -44,18 +48,23 @@ header{
 
 .listoflinks a {
     text-decoration: none;
-    font-size: 15;
+    font-size: 15px;
     color: #fff; 
     padding: 10px 20px;
-    border-radius: 5px;
     width: 512px;
     height: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.listoflinks a:hover {
+    color: #000; /* Change text color on hover */
+    border-bottom: 2px solid #fff; /* Add white underline on hover */
 }
 
 .Navbar img{
     width: 125px;
     height: 121px;
- }
+}
 
 .profile-driver img{
     width: 100%;
@@ -67,17 +76,20 @@ header{
     width: auto;
     margin: auto;
     background-color: #FFBD59; /* Yellow background */
-    padding-left: 22.3%;
+    padding-left: 15%;
     height: 230rem;
 
 }
 
 .locations-section h2 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
     font-size: 40px;
-    color: #000000; /* White text */
+    color: #000000; /* Black text */
     margin-bottom: 20px;
     padding-top: 7.438rem;
     padding-bottom: 2rem;
+    align-items: center; /* Center vertically */
 }
 
 .location-item {

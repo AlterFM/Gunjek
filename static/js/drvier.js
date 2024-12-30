@@ -77,3 +77,51 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Order selesai!");
     });
 });
+
+// pesanan yang sedang aktif
+document.addEventListener("DOMContentLoaded", () => {
+    const activeOrderContainer = document.querySelector(".active-order");
+    const activeFrom = document.getElementById("active-from");
+    const activeTo = document.getElementById("active-to");
+    const activeDriverName = document.getElementById("active-driver-name");
+    const nomorKendaraan = document.getElementById("nomor-kendaraan");
+    const travelTime = document.getElementById("travel-time");
+    const activeTarif = document.getElementById("active-tarif");
+    const cancelOrderBtn = document.getElementById("cancel-order");
+
+    const passengers = [
+        { id: 1, name: "Ahmad Fadli", npm: "51422568", destination: "Kampus F8", time: "11.50", tariff: "Rp 7000" },
+        { id: 2, name: "Tyera Octila", npm: "51422558", destination: "Kampus F8", time: "11.50", tariff: "Rp 7000" },
+        { id: 3, name: "Indah Permata", npm: "51422345", destination: "Kampus F8", time: "11.50", tariff: "Rp 7000" }
+    ];
+
+    passengers.forEach((passenger) => {
+        const acceptBtn = document.querySelector(`.accept-btn[data-id="${passenger.id}"]`);
+        acceptBtn.addEventListener("click", () => {
+            // Hide all passenger cards
+            document.querySelectorAll(".passenger-card").forEach(card => {
+                card.style.display = "none";
+            });
+
+            // Show active order details
+            activeFrom.textContent = "Your Location"; // Replace with actual data
+            activeTo.textContent = passenger.destination;
+            activeDriverName.textContent = "Driver Name"; // Replace with actual data
+            nomorKendaraan.textContent = "Vehicle Number"; // Replace with actual data
+            travelTime.textContent = passenger.time;
+            activeTarif.textContent = passenger.tariff;
+
+            activeOrderContainer.style.display = "block";
+        });
+    });
+
+    cancelOrderBtn.addEventListener("click", () => {
+        activeOrderContainer.style.display = "none";
+        alert("Pesanan dibatalkan!");
+
+        // Show all passenger cards again
+        document.querySelectorAll(".passenger-card").forEach(card => {
+            card.style.display = "block";
+        });
+    });
+});

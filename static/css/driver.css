@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+}
 /* Laptop */
 @media (max-width: 1366px) {
     html {
@@ -19,16 +23,23 @@
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    background-color: #D428D7;
+    background: linear-gradient(#D428D7, #443CE3);
+
+
 }
-header{
-    background-color: #D428D7;
-    /* padding: 20px; */
+header {
+    /* background-color: #B118C8;  */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
+
 .Navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    padding-right: 45px;
+
 }
 
 .listoflinks {
@@ -44,19 +55,23 @@ header{
 
 .listoflinks a {
     text-decoration: none;
-    font-size: 15;
+    font-size: 15px;
     color: #fff; 
     padding: 10px 20px;
-    border-radius: 5px;
     width: 512px;
     height: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.listoflinks a:hover {
+    color: #000; /* Change text color on hover */
+    border-bottom: 2px solid #fff; /* Add white underline on hover */
 }
 
 .Navbar img{
     width: 125px;
     height: 121px;
- }
-
+}
 .profile-driver img{
     width: 100%;
     height: auto;
@@ -65,13 +80,13 @@ header{
 .container {
     display: flex;
     justify-content: space-evenly;
-    background-color: #D428D7;
+    padding-top: 3%;
 }
 
 .container1 {
+    position: relative;
     background-color: #fff;
     width: 481px;
-    height: 580px;
     padding: 20px;
     border-radius: 0.5rem;
 }
@@ -133,6 +148,68 @@ header{
 .passenger-actions .reject-btn {
     background-color: #f44336;
     color: white;
+}
+/* active-order */
+
+.active-order {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active-order .order-awaiting {
+    background-color: #FFBD59;
+    color: black;
+    text-align: center;
+    padding: 2%;
+    font-size: 15px;
+}
+.active-order .order-accepted {
+    background-color:greenyellow;
+    color: black;
+    text-align: center;
+    padding: 2%;
+    font-size: 15px;
+}
+
+.order-details p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-details strong {
+    font-weight: bold;
+}
+.order-info1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 2%;
+}
+.order-info2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20%;
+    
+}
+.finish-btn {
+    background-color: #d042dc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+.finish-btn:hover {
+    background-color: #f3d1f8;
 }
 
 .container2 {
@@ -238,7 +315,6 @@ form .travel-time input {
     cursor: pointer;
     font-weight: 700;
     transition: background-color 0.3s;
-    
 }
 
 .btn:hover {
@@ -257,6 +333,7 @@ form .travel-time input {
     padding: 10px;
     margin-bottom: 10px;
     height: 483px;
+    overflow-y: auto;
 }
 
 .card-content {
@@ -265,7 +342,7 @@ form .travel-time input {
     border: 1px solid #ddd;
     border-radius: 0.25rem;
     margin-bottom: 0.625rem;
-    width: 420px;
+    width: 400px;
     height: 89px;
     font-size: 13px;
     justify-content: space-evenly;
@@ -278,12 +355,12 @@ footer{
     font-weight: 100;
     font-size: 20px;
     text-align: center;
-    padding: 10%;
+    padding: 2%;
+    max-height: 10%;
 }
 /* setetelah terima */
 .order-details {
-    background-color: #FFD700; /* Yellow background */
-    border-radius: 10px;
+    background-color: transparent; /* Yellow background */
     padding: 20px;
   }
   
@@ -299,3 +376,4 @@ footer{
     padding: 10px 20px;
     cursor: pointer;
   } 
+  

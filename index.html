@@ -9,7 +9,6 @@
 </head>
 <body>
     <header>
-        
         <div class="Navbar"> 
             <div class="logo">
                 <img src="./static/image/LOGO.png" alt="logo">
@@ -21,12 +20,19 @@
                 <li><a href="lokasi.html">Lokasi</a></li>
                 <li><a href="helpuser.html">Bantuan</a></li>
               </ul>
-            <div class="btn_masuk">
+            <div class="btn_masuk" id="btn_masuk" style="display: block;">
                 <button id="show-login">Masuk</button>
+            </div>
+            <div class="profile-user" id="profile-user" style="display: none;">
+                <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
+            </div>
+            <div class="profile-info" id="profile-info" style="display: none;">
+                <p id="profile-name">Nama: John Doe</p>
+                <p id="profile-npm">NPM: 123456789</p>
+                <button id="logout-button">Logout</button>
             </div>
             <div class="popup">
                 <div class="close-btn">&times;</div>
-            
                 <!-- User Login Form -->
                 <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
@@ -56,7 +62,6 @@
                         <span id="mode-text-login">Masuk sebagai Driver</span>
                     </div>
                 </div>
-            
                 <!-- Driver Login Form -->
                 <div class="driver-login-form" id="driver-login-form" style="display: none;">
                     <h2>Masuk sebagai Driver</h2>
@@ -149,13 +154,6 @@
                         <input type="text" id="driver-npm" placeholder="Masukkan NPM Anda">
                     </div>
                     <div class="form-element">
-                        <form action="/action_page.php" method="post" enctype="multipart/form-data">
-                            <label for="myFile">Konfirmasi BPKB</label>
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit" value="Unggah">
-                        </form>
-                    </div>
-                    <div class="form-element">
                         <button type="submit">Daftar</button>
                     </div>
                     <div class="toggle-container">
@@ -180,7 +178,7 @@
     <div class="gunjekorder">
         <img src="./static/image/Location Pin.gif" alt="locationgping" class="location-ping">
         <div class="siap-antar">
-            <h2>Gunadarma Ojek siap antar kamu<br>keliling kampus!</h2>
+            <h2>Gunjek siap antar kamu<br>keliling kampus!</h2>
             <p>bingung mau praktikum atau masuk kuliah beda gedung? order gunjek adalah<br>solusinya! mudah cari teman tebengan tanpa harus bayar mahal</p>
             <button class="btn_order" onclick="window.location.href='order.html'">Order</button>
         </div>
@@ -280,7 +278,7 @@
                 <p>Bantuan</p>
             </div>
         </ul>
-        <p>Gunadarma Ojek 2024</p>
+        <p>Gunjek 2025</p>
     </footer>
     <script src="./static/js/login.js"></script>
 </body>

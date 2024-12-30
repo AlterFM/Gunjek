@@ -70,12 +70,17 @@ header {
 
 .listoflinks a {
     text-decoration: none;
-    font-size: 15;
+    font-size: 15px;
     color: #fff; 
     padding: 10px 20px;
-    border-radius: 5px;
     width: 512px;
     height: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.listoflinks a:hover {
+    color: #000; /* Change text color on hover */
+    border-bottom: 2px solid #fff; /* Add white underline on hover */
 }
 
 .Navbar img{
@@ -83,11 +88,51 @@ header {
     height: 121px;
 
   }
+.profile-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-user img{
+    width: 100%;
+    height: auto;
+}
+
+.profile-info {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-info button {
+    background-color: #D428D7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-info button:hover {
+    background-color: #a320a5;
+}
 /* Login Popup */
 
 .btn_masuk button{
     background-color: #fff;
-    color: #F08080;
+    color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -95,6 +140,7 @@ header {
     transition: background-color 0.3s ease;
     width: 96px;
     height: 33px;
+    font-weight: bold;
 }
 
 
@@ -159,7 +205,7 @@ header {
 .popup .daftar-form .form-element,
 .popup .driver-login-form .form-element,
 .popup .driver-register-form .form-element {
-    margin: 15px 0px;
+    margin: 5px 0px;
 }
 
 .popup .login-form .form-element label,
@@ -289,6 +335,7 @@ input:checked + .slider:before {
 /* Upload KTM */ 
 .container-topkampus{
     background-color: #D428D7;
+    padding: 20px;
 }
 .topkampus {
     display: flex;
@@ -327,7 +374,6 @@ input:checked + .slider:before {
     height: 536px;
     display: flex;
     justify-content: center;
-
   }
 .location-ping {
     width: auto;
@@ -340,7 +386,7 @@ input:checked + .slider:before {
     text-align: right;
     padding-left: 17.5%;
 }
-    h2 {
+.gunjekorder h2 {
         font-size: 35px;
         padding-bottom: 35px;
         margin: 0; 
@@ -423,10 +469,10 @@ input:checked + .slider:before {
         border-radius: 30%; 
     }
     .card p {
-        background-color: #fff; 
+        background-color: transparent; 
         color: black; 
         margin: 0;
-        font-size: 25; 
+        font-size: 25px; 
         border-radius: 20%; 
     }
 

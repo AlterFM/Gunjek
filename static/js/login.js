@@ -37,3 +37,11 @@ document.getElementById('mode-toggle-login').addEventListener('change', function
 document.getElementById('mode-toggle-register').addEventListener('change', function() {
     showForm(this.checked ? 'driverRegister' : 'register');
 });
+
+//logout
+document.getElementById('logout-button').addEventListener('click', function() {
+    // Perform logout actions here, such as clearing session data or redirecting to a login page
+    alert('You have been logged out.');
+    // Example: Redirect to login page
+    window.location.href = '/login';
+});
