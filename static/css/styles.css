@@ -23,10 +23,31 @@ body {
 }
 
 /* Header styles */
+header .btn_masuk button,
+header .btn_daftar_driver {
+    position: relative;
+    z-index: 30;
+}
 
+header .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+header .popup.active {
+    opacity: 1;
+    visibility: visible;
+}
 header {
     background-color: #D428D7; /* Adjust the background color as needed */
-    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .Navbar {
@@ -60,17 +81,10 @@ header {
 .Navbar img{
     width: 125px;
     height: 121px;
-    margin-left: 250px;
 
   }
 /* Login Popup */
-.btn_masuk {
-    position: relative;
-    transform: translate(-50%, -50%);
-    margin-top: 2%;
-    
-    
-}
+
 .btn_masuk button{
     background-color: #fff;
     color: #F08080;
@@ -79,7 +93,6 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 190px;
     width: 96px;
     height: 33px;
 }
@@ -96,6 +109,7 @@ header {
     background: #fff;
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     border-radius: 10px;
+    z-index: 20;
     transition: top 0ms ease-in-out 0ms,
     opacity 200ms ease-in-out 0ms,
     transform 200ms ease-in-out 0ms;
@@ -215,6 +229,7 @@ header {
     font-weight: normal;
 }
 
+
 /* Styling untuk switch toggle */
 .switch {
     position: relative;
@@ -272,7 +287,9 @@ input:checked + .slider:before {
 /* End of CSS for forms and toggle switch */
 /* end daftar form */
 /* Upload KTM */ 
-
+.container-topkampus{
+    background-color: #D428D7;
+}
 .topkampus {
     display: flex;
     justify-content: center; /* Mengatur agar konten di dalam container berada di tengah secara horizontal */
@@ -587,6 +604,7 @@ input:checked + .slider:before {
         margin-top: 10%;
         text-align: center;
     }
+    
     
     
     
