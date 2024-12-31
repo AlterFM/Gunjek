@@ -15,11 +15,11 @@
                 <img src="{{asset('Gunjek/static/image/LOGO.png')}}" alt="logo"> 
             </div>
             <ul class="listoflinks">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="driver.html">Driver</a></li>
-                <li><a href="#lokasi">Lokasi</a></li>
-                <li><a href="#bantuan">Bantuan</a></li>
+                <li><a href="{{url('index')}}">Beranda</a></li>
+                <li><a href="{{url('order')}}">Order</a></li>
+                <li><a href="{{url('driver')}}">Driver</a></li>
+                <li><a href="{{url('lokasi')}}">Lokasi</a></li>
+                <li><a href="{{url('helpuser')}}">Bantuan</a></li>
             </ul>
             <div class="profile-container">
                 <img src="{{asset('Gunjek/static/image/male-user.png')}}" alt="profil" class="profile-picture">
@@ -27,53 +27,314 @@
         </div>
     </header>
     <div class="container">
-        <div class="left-panel">
-            <div class="search flex">
-                <input class="search-input" type="search" placeholder="Cari Tujuan dan Penjemputan yang sama">
-                <img src="{{asset('Gunjek/static/image/search.png')}}" alt="Search">
-            </div>
-            <div class="ride">
-                <img src="{{asset('Gunjek/static/image/helem.png')}}" alt="Helmet">
-                <div class="ride-details">
-                    <p>From: Kampus E</p>
-                    <p>To: Kampus F8</p>
-                    <p>11:50</p>
-                    <p>Rp 7000</p>
-                    <p>Khusus perempuan</p>
+        <div class="container1">
+            <div>
+                <div class="daftar-aktif">
+                    <h3>Daftar Driver Aktif</h1>
+                </div>
+                <div class="search flex">
+                    <input class="search-input" type="search" placeholder="Cari Tujuan dan Penjemputan yang sama">
+                    <img src="{{asset('Gunjek/static/image/search.png')}}" alt="Search">
                 </div>
             </div>
-            <div class="ride">
-                <img src="{{asset('Gunjek/static/image/helem.png')}}" alt="Helmet">
-                <div class="ride-details">
-                    <p>From: Kampus G</p>
-                    <p>To: Kampus H</p>
-                    <p>12:30</p>
-                    <p>Rp 8000</p>
-                    <p>Khusus laki-laki</p>
+            <div class="list-aktif-container">
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
                 </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
+                </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
+                </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
+                </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
+                </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+                    </div>
+                </div>
+                <div class="list-aktif1">
+                    <div class="helmdriver">
+                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-driver">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                    <div class="pesan-btn">
+                        <button type="submit">Pesan</button>
+
+                    </div>
+                </div>
+                <!-- Additional list-aktif1 items will be appended here dynamically -->
             </div>
             <!-- Additional rides -->
+            <div class="active-order" style="display: none;">
+                <div class="order-awaiting">
+                    <h3>Pesanan anda sedang diproses</h3>
+                </div>
+                <div class="order-accepted">
+                    <h3>Pesanan diterima, pengemudi menuju tempat anda!</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-info1">
+                        <p><strong>Dari:</strong> <span id="active-from"></span></p>
+                        <img src="{{asset('Gunjek/static/image/order_aktif.png')}}" alt="order_aktif">
+                        <p><strong>Menuju:</strong> <span id="active-to"></span></p>
+                    </div>
+                    <div class="order-info2">
+                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
+                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
+                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
+                        <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
+                    </div>
+                </div>
+                <button class="cancel-btn" id="cancel-order">Batalkan Pesanan</button>
+            </div>
+            
         </div>
-        <div class="right-panel">
-            <form>
-                <div class="form-group">
-                    <label for="destination">Pilih Tujuan</label>
-                    <input type="text" id="destination" placeholder="Tujuan">
+        <div class="container2">
+            <div class="tabs">
+                <button class="tab active" id="order-tab">Order</button>
+                <button class="tab" id="history-tab">Riwayat</button>
+            </div>
+            <div class="history">
+                <div class="card">
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>From :</strong> Kampus E</p>
+                            <p class="time">11.50</p>
+                            <p class="note_gender">Khusus Pria/Wanita</p>
+                        </div>
+                        <div class="list-riwayat">
+                            <p><strong>To :</strong> Kampus F8</p>
+                            <p><strong>Rp 7000</strong></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="pickup">Lokasi Penjemputan</label>
-                    <input type="text" id="pickup" placeholder="Penjemputan">
-                </div>
-                <div class="form-group">
-                    <label for="time">Waktu pejemputan</label>
-                    <select id="time">
-                        <option value="now">Sekarang</option>
-                        <option value="reservation">Reservasi</option>
+            </div>
+            <div class="form-section">
+                <form id="order-form">
+                    <label for="destination">Tujuan</label>
+                    <select id="destination">
+                        <option value="" selected><br>Pilih tujuan</option>
                     </select>
-                </div>
-                <button type="submit">Order</button>
-            </form>
+                    <label for="pickup">Penjemputan</label>
+                    <select id="pickup">
+                        <option value="" selected>Pilih penjemputan</option>
+                    </select>
+                    <label for="travel-date">Waktu Perjalanan</label>
+                    <div class="travel-time">
+                        <input type="date" id="travel-date">
+                        <input type="time" id="travel-time">
+                    </div>           
+                    <label for="notes">Catatan</label>
+                    <textarea id="notes" rows="3"></textarea>
+                    
+                    <button type="submit" class="btn">Pesan</button>
+                </form>
+
+                
+            </div>
         </div>
     </div>
+    <footer>
+        <p>Gunjek 2025</p>
+    </footer>
+    <!-- javascript -->
+    <script src="{{asset('Gunjek/static/js/order.js')}}"></script>   
 </body>
 </html>

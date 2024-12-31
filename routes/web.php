@@ -26,6 +26,12 @@ Route::get('/order', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/lokasi',function(){
+    return view('lokasi');
+});
+Route::get('/helpuser',function(){
+    return view('helpuser');
+});
 
 Route::get("/admin",function(){
     return view('adminsite');

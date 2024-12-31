@@ -9,24 +9,31 @@
 </head>
 <body>
     <header>
-        
+
         <div class="Navbar"> 
             <div class="logo">
                 <img src="{{asset('Gunjek/static/image/LOGO.png')}}" alt="logo">
             </div>
             <ul class="listoflinks">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="driver.html">Driver</a></li>
-                <li><a href="#lokasi">Lokasi</a></li>
-                <li><a href="#bantuan">Bantuan</a></li>
+                <li><a href="{{url('index')}}">Beranda</a></li>
+                <li><a href="{{url('order')}}">Order</a></li>
+                <li><a href="{{url('driver')}}">Driver</a></li>
+                <li><a href="{{url('lokasi')}}">Lokasi</a></li>
+                <li><a href="{{url('helpuser')}}">Bantuan</a></li>
               </ul>
-            <div class="btn_masuk">
+            <!-- <div class="btn_masuk" id="btn_masuk">
                 <button id="show-login">Masuk</button>
-            </div>
+            </div> -->
+            <!-- <div class="profile-user" id="profile-user">
+                <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
+            </div> -->
+            {{-- <div class="profile-info" id="profile-info">
+                <p id="profile-name">Nama: John Doe</p>
+                <p id="profile-npm">NPM: 123456789</p>
+                <button id="logout-button">Logout</button>
+            </div> --}}
             <div class="popup">
                 <div class="close-btn">&times;</div>
-            
                 <!-- User Login Form -->
                 <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
@@ -56,7 +63,6 @@
                         <span id="mode-text-login">Masuk sebagai Driver</span>
                     </div>
                 </div>
-            
                 <!-- Driver Login Form -->
                 <div class="driver-login-form" id="driver-login-form" style="display: none;">
                     <h2>Masuk sebagai Driver</h2>
@@ -149,13 +155,6 @@
                         <input type="text" id="driver-npm" placeholder="Masukkan NPM Anda">
                     </div>
                     <div class="form-element">
-                        <form action="/action_page.php" method="post" enctype="multipart/form-data">
-                            <label for="myFile">Konfirmasi BPKB</label>
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit" value="Unggah">
-                        </form>
-                    </div>
-                    <div class="form-element">
                         <button type="submit">Daftar</button>
                     </div>
                     <div class="toggle-container">
@@ -168,18 +167,19 @@
                 </div>
             </div>
         </div>
+        
+    </header>
+    <div class="container-topkampus">
         <div class="topkampus">
             <img class="tkp1" src="{{asset('Gunjek/static/image/img1.png')}}" alt="kampusa">
             <img class="tkp2" src="{{asset('Gunjek/static/image/img2.png')}}" alt="kampusB">
-
         </div>
         <h1 class="welcome-text">Selamat datang di GUNJEK!</h1>
-
-    </header>
+    </div>
     <div class="gunjekorder">
         <img src="{{asset('Gunjek/static/image/Location Pin.gif')}}" alt="locationgping" class="location-ping">
         <div class="siap-antar">
-            <h2>Gunadarma Ojek siap antar kamu<br>keliling kampus!</h2>
+            <h2>Gunjek siap antar kamu<br>keliling kampus!</h2>
             <p>bingung mau praktikum atau masuk kuliah beda gedung? order gunjek adalah<br>solusinya! mudah cari teman tebengan tanpa harus bayar mahal</p>
             <button class="btn_order" onclick="window.location.href='order.html'">Order</button>
         </div>
@@ -251,7 +251,7 @@
             <div class="location-info">
                 <h4>KAMPUS H</h4>
                 <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
-                <button class="btn_lainnya">Lainnya</button>
+                <button class="btn_lainnya" onclick="lokasi.html">Lainnya</button>
             </div>
         </div>
     </div>
@@ -262,8 +262,8 @@
         </div>
         <ul>
             <div class="sosmed">
-                <img src="./static/image/Instagram Circle.png" alt="instagram">
-                <img src="./static/image/TwitterX.png" alt="twitter">
+                <img src="{{asset('Gunjek/static/image/Instagram Circle.png')}}" alt="instagram">
+                <img src="{{asset('Gunjek/static/image/TwitterX.png')}}" alt="twitter">
             </div>
             <div>
                 <h4>Informasi</h4>
@@ -279,8 +279,8 @@
                 <p>Bantuan</p>
             </div>
         </ul>
-        <p>Gunadarma Ojek <?php echo date("Y"); ?></p>
+        <p>Gunjek 2025</p>
     </footer>
-    <script src="./static/js/login.js"></script>
+    <script src="{{asset('Gunjek/static/js/login.js')}}"></script>
 </body>
 </html>
