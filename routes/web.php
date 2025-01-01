@@ -31,5 +31,9 @@ Route::get('/helpuser',function(){
 });
 
 Route::get("/admin",function(){
-    return view('adminsite');
+    return view('admin/adminsite');
+});
+
+Route::get("/loginadmin",function(){
+    return view('admin/login');
 });

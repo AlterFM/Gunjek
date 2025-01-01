@@ -73,9 +73,13 @@
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logologin-driver">
                     <form action="#" method="post">
                         <div class="form-element">
+                            <label for="driver-id">Email</label>
+                            <input type="text" id="driver-id" placeholder="Masukkan Email Driver Anda">
+                        </div>
+                        {{-- <div class="form-element">
                             <label for="driver-id">ID Driver</label>
                             <input type="text" id="driver-id" placeholder="Masukkan ID Driver Anda">
-                        </div>
+                        </div> --}}
                         <div class="form-element">
                             <label for="driver-password">Kata Sandi</label>
                             <input type="password" id="driver-password" placeholder="Masukkan kata sandi Anda">
@@ -123,7 +127,7 @@
                         <input type="password" id="password-confirm" placeholder="Masukkan kata sandi baru Anda">
                     </div> --}}
                         <div class="form-element">
-                            <label for="ktm-register">Unggah Ktm Anda</label>
+                            <label for="ktm-register">Unggah KTM Anda</label>
                             <input type="file" name="ktm" id="ktm-register">
                             {{-- <form action="/action_page.php" method="post" enctype="multipart/form-data">
                             <label for="myFile">Konfirmasi KTM</label>
@@ -215,7 +219,7 @@
             <h2>Gunjek siap antar kamu<br>keliling kampus!</h2>
             <p>bingung mau praktikum atau masuk kuliah beda gedung? order gunjek adalah<br>solusinya! mudah cari teman
                 tebengan tanpa harus bayar mahal</p>
-            <button class="btn_order" onclick="window.location.href='order.html'">Order</button>
+            <button class="btn_order" onclick="window.location.href='{{url('order')}}'">Order</button>
         </div>
     </div>
 
