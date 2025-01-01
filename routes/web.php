@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/driver', function () {
@@ -22,9 +22,6 @@ Route::get('/driver', function () {
 });
 Route::get('/order', function () {
     return view('order');
-});
-Route::get('/index', function () {
-    return view('index');
 });
 Route::get('/lokasi',function(){
     return view('lokasi');
