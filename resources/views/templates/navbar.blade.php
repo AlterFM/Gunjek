@@ -21,9 +21,12 @@
                         <i class="align-middle me-1" data-feather="user"></i> Profile
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <i class="align-middle me-1" data-feather="power"></i> Log out
-                    </a>
+                    <form action="{{ url('admin/logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                            <i class="align-middle me-1" data-feather="power"></i> Log out
+                        </button>
+                    </form>                    
                 </div>
             </li>
 

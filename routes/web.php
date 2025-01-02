@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,10 +31,9 @@ Route::get('/helpuser',function(){
     return view('helpuser');
 });
 
-Route::get("/admin",function(){
-    return view('admin/adminsite');
-});
-
-Route::get("/loginadmin",function(){
-    return view('admin/login');
+Route::controller(UserController::class)->group(function(){
+    Route::get('admin/login','adminlogin');
+    Route::post('admin/storelogin','adminstorelogin');
+    Route::post('admin/logout','adminlogout');
+    Route::get('adminsite','siteadmin');
 });

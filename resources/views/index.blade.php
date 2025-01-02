@@ -13,23 +13,14 @@
     <header>
 
         <div class="Navbar">
-            <div class="logo">
-                <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logo">
-            </div>
-            <ul class="listoflinks">
-                <li><a href="{{ url('/') }}">Beranda</a></li>
-                <li><a href="{{ url('order') }}">Order</a></li>
-                <li><a href="{{ url('driver') }}">Driver</a></li>
-                <li><a href="{{ url('lokasi') }}">Lokasi</a></li>
-                <li><a href="{{ url('helpuser') }}">Bantuan</a></li>
-            </ul>
+            @include('menu.navbar')
             <div class="btn_masuk" id="btn_masuk">
                 <button id="show-login">Masuk</button>
             </div>
-            <!-- <div class="profile-user" id="profile-user">
-                <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
-            </div> -->
-            {{-- <div class="profile-info" id="profile-info">
+            {{-- <div class="profile-user" id="profile-user">
+                <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="driverlogo" class="userlogo">
+            </div>
+            <div class="profile-info" id="profile-info">
                 <p id="profile-name">Nama: John Doe</p>
                 <p id="profile-npm">NPM: 123456789</p>
                 <button id="logout-button">Logout</button>
@@ -40,7 +31,8 @@
                 <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logologin">
-                    <form action="#" method="post">
+                    <form action="{{url('loginuser')}}" method="post">
+                        @csrf
                         <div class="form-element">
                             <label for="npm">NPM</label>
                             <input type="text" id="npm" placeholder="Masukkan NPM Anda">
@@ -71,7 +63,8 @@
                 <div class="driver-login-form" id="driver-login-form" style="display: none;">
                     <h2>Masuk sebagai Driver</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logologin-driver">
-                    <form action="#" method="post">
+                    <form action="{{url('logindriver')}}" method="post">
+                        @csrf
                         <div class="form-element">
                             <label for="driver-id">Email</label>
                             <input type="text" id="driver-id" placeholder="Masukkan Email Driver Anda">
@@ -105,7 +98,8 @@
                     <h2>Daftar</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logodaftar">
                     {{-- daftar user(penumpang) --}}
-                    <form action="#" method="post">
+                    <form action="{{url('registeruser')}}" method="post">
+                        @csrf
                         <div class="form-element">
                             <label for="npm-register">NPM</label>
                             <input type="text" id="npm-register" placeholder="Masukkan NPM Anda">
@@ -156,7 +150,8 @@
                     <h2>Daftar sebagai Driver</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logodaftar-driver">
                     {{-- driver registrasi --}}
-                    <form action="#" method="post">
+                    <form action="{{url('registerdriver')}}" method="post">
+                        @csrf
                         <div class="form-element">
                             <label for="driver-npm">NPM</label>
                             <input type="text" id="driver-npm" placeholder="Masukkan NPM Anda">
