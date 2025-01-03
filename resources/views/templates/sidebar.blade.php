@@ -37,13 +37,13 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="ui-forms.html">
+                <a class="sidebar-link" href="{{url('kampus')}}">
                     <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kampus</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="ui-cards.html">
+                <a class="sidebar-link" href="{{url('kampus/tambah')}}">
                     <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Tambah Kampus</span>
                 </a>
             </li>

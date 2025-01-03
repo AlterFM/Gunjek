@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Nomor_Kendaraan', 50);
             $table->string('Alamat');
             $table->string('Foto_Diri', 50);
+            $table->integer('id_user');
             $table->timestamps();
         });
     }

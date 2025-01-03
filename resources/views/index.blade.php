@@ -82,7 +82,7 @@
                         </div>
                     </form>
                     <div class="form-element">
-                        <a href="#" class="klik_daftar" onclick="showForm('driverRegister')">Daftar</a>
+                        <a href="" class="klik_daftar" onclick="showForm('driverRegister')">Daftar</a>
                     </div>
                     <div class="toggle-container">
                         <label class="switch">
@@ -98,23 +98,23 @@
                     <h2>Daftar</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logodaftar">
                     {{-- daftar user(penumpang) --}}
-                    <form action="{{url('registeruser')}}" method="post">
+                    <form action="{{url('registeruser')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-element">
                             <label for="npm-register">NPM</label>
-                            <input type="text" id="npm-register" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="npm-register" name="npm" class="npm-register" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="email-register">Email</label>
-                            <input type="text" id="npm-register" placeholder="Masukkan Email Anda">
+                            <input type="text" id="email-register" name="email" class="email-register" placeholder="Masukkan Email Anda">
                         </div>
                         <div class="form-element">
                             <label for="nomorhp-register">Nomor Telpon</label>
-                            <input type="text" id="nomorhp-register" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="nomorhp-register" name="nomor_handphone" class="nomorhp-register" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="password-register">Kata Sandi</label>
-                            <input type="password" id="password-register" placeholder="Buat kata sandi baru Anda">
+                            <input type="password" id="password-register" name="password" class="password-register" placeholder="Buat kata sandi baru Anda">
                         </div>
                         {{-- <div class="form-element">
                         <label for="password-confirm">Konfirmasi Kata Sandi</label>
@@ -122,7 +122,7 @@
                     </div> --}}
                         <div class="form-element">
                             <label for="ktm-register">Unggah KTM Anda</label>
-                            <input type="file" name="ktm" id="ktm-register">
+                            <input type="file" name="ktm" id="ktm-register" class="ktm-register">
                             {{-- <form action="/action_page.php" method="post" enctype="multipart/form-data">
                             <label for="myFile">Konfirmasi KTM</label>
                             <input type="file" id="myFile" name="filename">

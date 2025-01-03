@@ -54,6 +54,18 @@ class UserController extends Controller
     }
 
     // khusus penumpang
+    public function userlogin(){
+        return 'userlogin';
+    }
+    public function userregister(){
+        return 'userregister';
+    }
 
-
+    // khusus driver
+    public function driverlogin(){
+        return 'driverlogin';
+    }
+    public function driverregister(){
+        return 'driverregister';
+    }
 }
