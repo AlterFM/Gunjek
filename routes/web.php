@@ -51,6 +51,9 @@ Route::controller(UserController::class)->group(function(){
     Route::post('logindriver','driverlogin');
     Route::post('registerdriver','driverregister');
     // akhir driver
+    
+    // user dan driver
+    Route::post('logout','logout');
 });
 
 Route::middleware(['checkRole:admin'])->group(function(){

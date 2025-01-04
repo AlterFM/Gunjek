@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('master_drivers', function (Blueprint $table) {
             $table->uuid('driver_id')->primary();
             // $table->string('driver_id', 50);
-            $table->string('Nomor_Kendaraan', 50);
-            $table->string('Alamat');
-            $table->string('Foto_Diri', 50);
-            $table->integer('id_user');
+            $table->string('Nomor_Kendaraan', 50)->nullable();
+            $table->string('Alamat')->nullable();
+            $table->string('Foto_Diri', 50)->nullable();
+            $table->integer('id_user')->nullable();
             $table->timestamps();
         });
     }

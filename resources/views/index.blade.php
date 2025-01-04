@@ -14,32 +14,40 @@
 
         <div class="Navbar">
             @include('menu.navbar')
+            @guest
             <div class="btn_masuk" id="btn_masuk">
                 <button id="show-login">Masuk</button>
             </div>
-            {{-- <div class="profile-user" id="profile-user">
+            @endguest
+            @auth
+            <div class="profile-user" id="profile-user">
                 <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="driverlogo" class="userlogo">
             </div>
             <div class="profile-info" id="profile-info">
-                <p id="profile-name">Nama: John Doe</p>
-                <p id="profile-npm">NPM: 123456789</p>
-                <button id="logout-button">Logout</button>
-            </div> --}}
+                <p id="profile-npm">NPM: {{Auth::user()->npm}}</p>
+                <form action="{{ url('/logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="dropdown-item">
+                        <i class="align-middle me-1" data-feather="power"></i> Log out
+                    </button>
+                </form>          
+            </div>
+            @endauth
             <div class="popup">
                 <div class="close-btn">&times;</div>
                 <!-- User Login Form -->
                 <div class="login-form" id="login-form">
                     <h2>Masuk</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logologin">
-                    <form action="{{url('loginuser')}}" method="post">
+                    <form action="{{ url('loginuser') }}" method="post">
                         @csrf
                         <div class="form-element">
                             <label for="npm">NPM</label>
-                            <input type="text" id="npm" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="npm" name="npm" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="password">Kata Sandi</label>
-                            <input type="password" id="password" placeholder="Masukkan kata sandi Anda">
+                            <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda">
                         </div>
                         <div class="form-element">
                             <a href="a" class="lupa-sandi">Lupa kata sandi</a>
@@ -63,11 +71,11 @@
                 <div class="driver-login-form" id="driver-login-form" style="display: none;">
                     <h2>Masuk sebagai Driver</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logologin-driver">
-                    <form action="{{url('logindriver')}}" method="post">
+                    <form action="{{ url('logindriver') }}" method="post">
                         @csrf
                         <div class="form-element">
                             <label for="driver-id">Email</label>
-                            <input type="text" id="driver-id" placeholder="Masukkan Email Driver Anda">
+                            <input type="text" id="driver-id" name="email" placeholder="Masukkan Email Driver Anda">
                         </div>
                         {{-- <div class="form-element">
                             <label for="driver-id">ID Driver</label>
@@ -75,7 +83,7 @@
                         </div> --}}
                         <div class="form-element">
                             <label for="driver-password">Kata Sandi</label>
-                            <input type="password" id="driver-password" placeholder="Masukkan kata sandi Anda">
+                            <input type="password" id="driver-password" name="password" placeholder="Masukkan kata sandi Anda">
                         </div>
                         <div class="form-element">
                             <button type="submit">Masuk</button>
@@ -98,23 +106,27 @@
                     <h2>Daftar</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logodaftar">
                     {{-- daftar user(penumpang) --}}
-                    <form action="{{url('registeruser')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('registeruser') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-element">
                             <label for="npm-register">NPM</label>
-                            <input type="text" id="npm-register" name="npm" class="npm-register" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="npm-register" name="npm" class="npm-register"
+                                placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="email-register">Email</label>
-                            <input type="text" id="email-register" name="email" class="email-register" placeholder="Masukkan Email Anda">
+                            <input type="text" id="email-register" name="email" class="email-register"
+                                placeholder="Masukkan Email Anda">
                         </div>
                         <div class="form-element">
                             <label for="nomorhp-register">Nomor Telpon</label>
-                            <input type="text" id="nomorhp-register" name="nomor_handphone" class="nomorhp-register" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="nomorhp-register" name="nomor_handphone"
+                                class="nomorhp-register" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="password-register">Kata Sandi</label>
-                            <input type="password" id="password-register" name="password" class="password-register" placeholder="Buat kata sandi baru Anda">
+                            <input type="password" id="password-register" name="password" class="password-register"
+                                placeholder="Buat kata sandi baru Anda">
                         </div>
                         {{-- <div class="form-element">
                         <label for="password-confirm">Konfirmasi Kata Sandi</label>
@@ -123,13 +135,7 @@
                         <div class="form-element">
                             <label for="ktm-register">Unggah KTM Anda</label>
                             <input type="file" name="ktm" id="ktm-register" class="ktm-register">
-                            {{-- <form action="/action_page.php" method="post" enctype="multipart/form-data">
-                            <label for="myFile">Konfirmasi KTM</label>
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit" value="Unggah">
-                            <span class="icon-plus">+</span>
-                            <span class="Upload-text">Unggah KTM Anda</span>
-                        </form> --}}
+
                         </div>
                         <div class="form-element">
                             <button type="submit">Daftar</button>
@@ -150,23 +156,24 @@
                     <h2>Daftar sebagai Driver</h2>
                     <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logodaftar-driver">
                     {{-- driver registrasi --}}
-                    <form action="{{url('registerdriver')}}" method="post">
+                    <form action="{{ url('registerdriver') }}" method="post">
                         @csrf
                         <div class="form-element">
                             <label for="driver-npm">NPM</label>
-                            <input type="text" id="driver-npm" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="driver-npm" name="npm" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="email-register">Email</label>
-                            <input type="text" id="npm-register" placeholder="Masukkan Email Anda">
+                            <input type="text" id="npm-register" name="email" placeholder="Masukkan Email Anda">
                         </div>
                         <div class="form-element">
                             <label for="nomorhp-register">Nomor Telpon</label>
-                            <input type="text" id="nomorhp-register" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="nomorhp-register" name="nomor_handphone" placeholder="Masukkan NPM Anda">
                         </div>
                         <div class="form-element">
                             <label for="driver-password-register">Kata Sandi</label>
-                            <input type="password" id="driver-password-register" placeholder="Buat kata sandi baru Anda">
+                            <input type="password" name="password" id="driver-password-register"
+                                placeholder="Buat kata sandi baru Anda">
                         </div>
                         {{-- <div class="form-element">
                             <label for="driver-password-confirm">Konfirmasi Kata Sandi</label>
@@ -214,7 +221,7 @@
             <h2>Gunjek siap antar kamu<br>keliling kampus!</h2>
             <p>bingung mau praktikum atau masuk kuliah beda gedung? order gunjek adalah<br>solusinya! mudah cari teman
                 tebengan tanpa harus bayar mahal</p>
-            <button class="btn_order" onclick="window.location.href='{{url('order')}}'">Order</button>
+            <button class="btn_order" onclick="window.location.href='{{ url('order') }}'">Order</button>
         </div>
     </div>
 
