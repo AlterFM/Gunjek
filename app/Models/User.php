@@ -43,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // relasi user
+    public function master_driver(){
+        return $this->hasOne(Master_Driver::class);
+    }
 }

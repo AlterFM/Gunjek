@@ -69,6 +69,7 @@ Route::middleware(['checkRole:admin'])->group(function(){
 Route::middleware(['checkRole:driver'])->group(function(){
     Route::controller(DriverController::class)->group(function(){
         Route::get('driver','index');
+        Route::put('driver-update/{driver_id}','update');
     });
 });
 

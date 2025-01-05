@@ -14,4 +14,9 @@ class Master_Driver extends Model
     protected $primaryKey = 'driver_id';
     protected $keyType = 'string';
     public $incrementing = false;
+
+    // relasi master_drivers
+    public function user(){
+        return $this->belongsTo(User::class,'id_user');
+    }
 }
