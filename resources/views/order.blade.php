@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('Gunjek/static/css/order.css')}}">
+    <link rel="stylesheet" href="{{ asset('Gunjek/static/css/order.css') }}">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <title>Order GunJek</title>
 </head>
+
 <body>
     <header>
         <div class="Navbar">
             @include('menu.navbar')
             <div class="profile-container">
-                <img src="{{asset('Gunjek/static/image/male-user.png')}}" alt="profil" class="profile-picture">
+                <img src="{{ asset('Gunjek/static/image/male-user.png') }}" alt="profil" class="profile-picture">
             </div>
         </div>
     </header>
@@ -25,13 +27,13 @@
                 </div>
                 <div class="search flex">
                     <input class="search-input" type="search" placeholder="Cari Tujuan dan Penjemputan yang sama">
-                    <img src="{{asset('Gunjek/static/image/search.png')}}" alt="Search">
+                    <img src="{{ asset('Gunjek/static/image/search.png') }}" alt="Search">
                 </div>
             </div>
             <div class="list-aktif-container">
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -48,7 +50,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -65,7 +67,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -82,7 +84,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -99,7 +101,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -116,7 +118,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -133,7 +135,7 @@
                 </div>
                 <div class="list-aktif1">
                     <div class="helmdriver">
-                        <img src="{{asset('Gunjek/static/image/helmhitam.png')}}" alt="logoperjalanan">
+                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                     </div>
                     <div class="list-driver">
                         <p><strong>From :</strong> Kampus E</p>
@@ -162,7 +164,7 @@
                 <div class="order-details">
                     <div class="order-info1">
                         <p><strong>Dari:</strong> <span id="active-from"></span></p>
-                        <img src="{{asset('Gunjek/static/image/order_aktif.png')}}" alt="order_aktif">
+                        <img src="{{ asset('Gunjek/static/image/order_aktif.png') }}" alt="order_aktif">
                         <p><strong>Menuju:</strong> <span id="active-to"></span></p>
                     </div>
                     <div class="order-info2">
@@ -174,7 +176,7 @@
                 </div>
                 <button class="cancel-btn" id="cancel-order">Batalkan Pesanan</button>
             </div>
-            
+
         </div>
         <div class="container2">
             <div class="tabs">
@@ -185,7 +187,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -199,7 +201,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -213,7 +215,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -227,7 +229,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -241,7 +243,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -255,7 +257,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -269,7 +271,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -283,7 +285,7 @@
                     </div>
                     <div class="card-content">
                         <div>
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="profil_user_riwayat">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
                             <p><strong>From :</strong> Kampus E</p>
@@ -301,24 +303,32 @@
                 <form id="order-form">
                     <label for="destination">Tujuan</label>
                     <select id="destination">
-                        <option value="" selected><br>Pilih tujuan</option>
+                        <option value="" selected disabled>Pilih Tujuan</option>
+                        @foreach ($kampuss as $kampus)
+                            <option value="{{ $kampus->Kampus_id }}">{{ $kampus->Nama_Kampus }}</option>
+                        @endforeach
+                        {{-- <option value="" selected><br>Pilih tujuan</option> --}}
                     </select>
                     <label for="pickup">Penjemputan</label>
                     <select id="pickup">
-                        <option value="" selected>Pilih penjemputan</option>
+                        <option value="" selected disabled>Pilih Penjemputan</option>
+                        @foreach ($kampuss as $kampus)
+                            <option value="{{ $kampus->Kampus_id }}">{{ $kampus->Nama_Kampus }}</option>
+                        @endforeach
+                        {{-- <option value="" selected>Pilih penjemputan</option> --}}
                     </select>
                     <label for="travel-date">Waktu Perjalanan</label>
                     <div class="travel-time">
                         <input type="date" id="travel-date">
                         <input type="time" id="travel-time">
-                    </div>           
+                    </div>
                     <label for="notes">Catatan</label>
                     <textarea id="notes" rows="3"></textarea>
-                    
+
                     <button type="submit" class="btn">Pesan</button>
                 </form>
 
-                
+
             </div>
         </div>
     </div>
@@ -326,6 +336,7 @@
         <p>Gunjek 2025</p>
     </footer>
     <!-- javascript -->
-    <script src="{{asset('Gunjek/static/js/order.js')}}"></script>   
+    <script src="{{ asset('Gunjek/static/js/order.js') }}"></script>
 </body>
+
 </html>

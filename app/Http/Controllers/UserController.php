@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Master_Driver;
+use App\Models\Tarif;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -149,7 +150,12 @@ class UserController extends Controller
         $driver->driver_id = Str::uuid();
         $driver->id_user = $user->id;
         $driver->save();
-        return redirect('/');   
+
+        $tarif = new Tarif;
+        $tarif->Tarif_id = Str::ulid();
+        $tarif->id_user = $user->id;
+        $tarif->save();
+        return redirect('/'); 
     }
     //---------- LOGOUT ----- 
     public function logout(Request $request){

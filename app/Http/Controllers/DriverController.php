@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Master_Driver;
+use App\Models\Master_Location;
+use App\Models\Tarif;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DriverController extends Controller
 {
     public function index()
     {
-        $drivers = Master_Driver::with('user')->get(); // Ambil data driver beserta user terkait
-        return view('driver', compact('drivers'));
+        $tarifs = Tarif::with('user')->get();
+        $drivers = Master_Driver::with('user')->get(); // mengambil data driver beserta user terkait
+        $kampuss = Master_Location::all();
+        return view('driver', compact('drivers','kampuss','tarifs'));
     }
     public function update(Request $request, $driver_id)
     {
@@ -35,5 +40,42 @@ class DriverController extends Controller
         }
         $driver->save();
         return redirect()->back()->with('status', 'Selamat Anda Telah Terdaftar');
+    }
+    public function order(Request $request,$Tarif_id){
+        // dd($id_user);
+        $request->validate([
+            'Tujuan' => 'nullable|string|max:50',
+            'Penjemputan' => 'nullable|string|max:255',
+            'Harga' => 'integer',
+        ]);
+        $tarif = Tarif::findOrFail($Tarif_id);
+        // dd($tarif);
+        if ($request->Tujuan) {
+            $tarif->Tujuan = $request->Tujuan;
+        }
+        if ($request->Penjemputan) {
+            $tarif->Penjemputan = $request->Penjemputan;
+        }
+        if ($request->Harga) {
+            $tarif->Harga = $request->Harga;
+        }
+        if ($request->Jam) {
+            $tarif->Jam = $request->Jam;
+        }
+        if ($request->Tanggal) {
+            $tarif->Tanggal = $request->Tanggal;
+        }
+        if ($request->catatan) {
+            $tarif->catatan = $request->catatan;
+        }
+        $tarif->id_user = Auth::id();
+        $tarif->save();
+        return redirect()->back()->with('status', 'Tujuan Aktif');
+    }
+    public function status(Request $request,$Tarif_id){
+        $tarifstatus = Tarif::findOrFail($Tarif_id);
+        $tarifstatus->status = $request->status;
+        $tarifstatus->save();
+        return redirect()->back();
     }
 }

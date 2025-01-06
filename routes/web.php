@@ -70,6 +70,8 @@ Route::middleware(['checkRole:driver'])->group(function(){
     Route::controller(DriverController::class)->group(function(){
         Route::get('driver','index');
         Route::put('driver-update/{driver_id}','update');
+        Route::patch('startorder/{Tarif_id}','order');
+        Route::put('statusdriver/{Tarif_id}','status');
     });
 });
 

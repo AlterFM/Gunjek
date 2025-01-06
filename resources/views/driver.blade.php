@@ -60,136 +60,174 @@
                         <div class="helmdriver">
                             <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                         </div>
-                        <div class="list-driver">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-driver">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 700Z0</strong></p>
-                        </div>
+                        @foreach ($tarifs as $tarif)
+                            <div class="list-driver">
+                                <p><strong>From :</strong> {{ $tarif->Tujuan }}</p>
+                                <p class="time">{{ $tarif->Jam }}</p>
+                                <p class="note_gender">Khusus Pria/Wanita</p>
+                            </div>
+                            <div class="list-driver">
+                                <p><strong>To :</strong> {{ $tarif->Penjemputan }}</p>
+                                <p><strong>Rp {{ $tarif->Harga }}</strong></p>
+                            </div>
+
                     </div>
                     <div id="passenger-list-container" class="passenger-list-container">
-                        <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
-                    </div>
-                    <div class="active-order" style="display: none;">
-                        <div class="order-accepted">
-                            <h3>Pesanan Aktif</h3>
-                        </div>
-                        <div class="order-details">
-                            <div class="order-info1">
-                                <p><strong>Dari:</strong> <span id="active-from"></span></p>
-                                <img src="./static/image/order_aktif.png" alt="order_aktif">
-                                <p><strong>Menuju:</strong> <span id="active-to"></span></p>
-                            </div>
-                            <div class="order-info2">
-                                <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
-                                <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
-                                <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
-                                <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
-                            </div>
-                        </div>
-                        <button class="finish-btn" id="finish-order">Selesai</button>
-                    </div>
-
-                </div>
-                <div class="container2">
-                    <div class="tabs">
-                        <button class="tab active" id="order-tab">Order</button>
-                        <button class="tab" id="history-tab">Riwayat</button>
-                    </div>
-                    <div class="history">
-                        <div class="card">
-                            <div class="card-content">
-                                <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                                <div class="list-riwayat">
-                                    <p><strong>From :</strong> Kampus E</p>
-                                    <p class="time">11.50</p>
-                                    <p class="note_gender">Khusus Pria/Wanita</p>
-                                </div>
-                                <div class="list-riwayat">
-                                    <p><strong>To :</strong> Kampus F8</p>
-                                    <p><strong>Rp 7000</strong></p>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                                <div class="list-riwayat">
-                                    <p><strong>From :</strong> Kampus E</p>
-                                    <p class="time">11.50</p>
-                                    <p class="note_gender">Khusus Pria/Wanita</p>
-                                </div>
-                                <div class="list-riwayat">
-                                    <p><strong>To :</strong> Kampus F8</p>
-                                    <p><strong>Rp 7000</strong></p>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                                <div class="list-riwayat">
-                                    <p><strong>From :</strong> Kampus E</p>
-                                    <p class="time">11.50</p>
-                                    <p class="note_gender">Khusus Pria/Wanita</p>
-                                </div>
-                                <div class="list-riwayat">
-                                    <p><strong>To :</strong> Kampus F8</p>
-                                    <p><strong>Rp 7000</strong></p>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                                <div class="list-riwayat">
-                                    <p><strong>From :</strong> Kampus E</p>
-                                    <p class="time">11.50</p>
-                                    <p class="note_gender">Khusus Pria/Wanita</p>
-                                </div>
-                                <div class="list-riwayat">
-                                    <p><strong>To :</strong> Kampus F8</p>
-                                    <p><strong>Rp 7000</strong></p>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                                <div class="list-riwayat">
-                                    <p><strong>From :</strong> Kampus E</p>
-                                    <p class="time">11.50</p>
-                                    <p class="note_gender">Khusus Pria/Wanita</p>
-                                </div>
-                                <div class="list-riwayat">
-                                    <p><strong>To :</strong> Kampus F8</p>
-                                    <p><strong>Rp 7000</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-section">
-                        <form id="order-form">
-                            <label for="destination">Tujuan</label>
-                            <select id="destination">
-                                <option value="" selected><br>Pilih tujuan</option>
+                        <p>Status Anda :
+                        <form action="{{ url('statusdriver', $tarif->Tarif_id) }}" method="post" id="statusForm">
+                            @csrf
+                            @method('PUT')
+                            <select name="status" id="status"
+                                onchange="document.getElementById('statusForm').submit()">
+                                <option value="on"{{ $tarif->status === 'on' ? 'selected' : '' }}>Aktif</option>
+                                <option value="off" {{ $tarif->status === 'off' ? 'selected' : '' }}>Tidak Aktif
+                                </option>
                             </select>
-                            <label for="pickup">Penjemputan</label>
-                            <select id="pickup">
-                                <option value="" selected>Pilih penjemputan</option>
-                            </select>
-                            <label for="travel-date">Waktu Perjalanan</label>
-                            <div class="travel-time">
-                                <input type="date" id="travel-date">
-                                <input type="time" id="travel-time">
-                            </div>
-                            <label for="tariff">Tarif</label>
-                            <input type="text" id="tariff" placeholder="Masukkan tarif">
-
-                            <label for="notes">Catatan</label>
-                            <textarea id="notes" rows="3"></textarea>
-
-                            <button type="submit" class="btn">Buat</button>
                         </form>
+                        </p>
+                        <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
+                        <div class="passenger-info passenger-card">
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="Avatar Penumpang" class="avatar">
+                            <div>
+                                <p><strong>${passenger.npm}</strong></p>
+                                <p>${passenger.email}</p>
+                            </div>
+                        </div>
+                        <div class="passenger-actions">
+                            <button class="accept-btn" data-id="${passenger.id}">Terima</button>
+                            <button class="reject-btn" data-id="${passenger.id}">Tolak</button>
+                        </div>
+                    </div>
+            @endforeach
+            <div class="active-order" style="display: none;">
+                <div class="order-accepted">
+                    <h3>Pesanan Aktif</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-info1">
+                        <p><strong>Dari:</strong> <span id="active-from"></span></p>
+                        <img src="{{ asset('Gunjek/static/image/order_aktif.png') }}" alt="order_aktif">
+                        <p><strong>Menuju:</strong> <span id="active-to"></span></p>
+                    </div>
+                    <div class="order-info2">
+                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
+                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
+                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
+                        <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
                     </div>
                 </div>
-            @endif
-        @endforeach
+                <button class="finish-btn" id="finish-order">Selesai</button>
+            </div>
+
+    </div>
+    <div class="container2">
+        <div class="tabs">
+            <button class="tab active" id="order-tab">Order</button>
+            <button class="tab" id="history-tab">Riwayat</button>
+        </div>
+        <div class="history">
+            <div class="card">
+                <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> Kampus E</p>
+                        <p class="time">11.50</p>
+                        <p class="note_gender">Khusus Pria/Wanita</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong> Kampus F8</p>
+                        <p><strong>Rp 7000</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            @foreach ($tarifs as $tarif)
+                <form id="order-form" action="{{ url('startorder', $tarif->Tarif_id) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <label for="destination">Tujuan</label>
+                    <select id="destination" name="Tujuan">
+                        <option value="" selected disabled>Pilih Tujuan</option>
+                        @foreach ($kampuss as $kampus)
+                            <option value="{{ $kampus->Nama_Kampus }}">{{ $kampus->Nama_Kampus }}</option>
+                        @endforeach
+                        {{-- <br>Pilih tujuan</option> --}}
+                    </select>
+                    <label for="pickup">Penjemputan</label>
+                    <select id="pickup" name="Penjemputan">
+                        <option value="" selected disabled>Pilih Tujuan</option>
+                        @foreach ($kampuss as $kampus)
+                            <option value="{{ $kampus->Nama_Kampus }}">{{ $kampus->Nama_Kampus }}</option>
+                        @endforeach
+                        {{-- <option value="" selected>Pilih penjemputan</option> --}}
+                    </select>
+                    <label for="travel-date">Waktu Perjalanan</label>
+                    <div class="travel-time">
+                        <input type="date" id="travel-date" name="Tanggal">
+                        <input type="time" id="travel-time" name="Jam">
+                    </div>
+                    <label for="tariff">Tarif</label>
+                    <input type="text" id="tariff" name="Harga" placeholder="Masukkan tarif">
+
+                    <label for="notes">Catatan</label>
+                    <textarea id="notes" name="catatan" rows="3"></textarea>
+
+                    <button type="submit" class="btn">Buat</button>
+                </form>
+            @endforeach
+        </div>
+    </div>
+    @endif
+    @endforeach
     </div>
     <footer>
         <p>Gunjek 2025</p>

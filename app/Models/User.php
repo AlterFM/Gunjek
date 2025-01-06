@@ -48,4 +48,7 @@ class User extends Authenticatable
     public function master_driver(){
         return $this->hasOne(Master_Driver::class);
     }
+    public function tarif(){
+        return $this->hasOne(Tarif::class);
+    }
 }
