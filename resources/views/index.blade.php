@@ -109,6 +109,11 @@
                     <form action="{{ url('registeruser') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-element">
+                            <label for="name-register">Nama</label>
+                            <input type="text" id="name-register" name="name" class="name-register"
+                                placeholder="Masukkan NPM Anda">
+                        </div>
+                        <div class="form-element">
                             <label for="npm-register">NPM</label>
                             <input type="text" id="npm-register" name="npm" class="npm-register"
                                 placeholder="Masukkan NPM Anda">

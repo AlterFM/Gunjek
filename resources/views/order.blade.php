@@ -300,30 +300,31 @@
                 </div>
             </div>
             <div class="form-section">
-                <form id="order-form">
+                <form id="order-form" action="{{url('order-store')}}" method="POST">
+                    @csrf
                     <label for="destination">Tujuan</label>
-                    <select id="destination">
+                    <select id="destination" name="Tujuan">
                         <option value="" selected disabled>Pilih Tujuan</option>
                         @foreach ($kampuss as $kampus)
-                            <option value="{{ $kampus->Kampus_id }}">{{ $kampus->Nama_Kampus }}</option>
+                            <option value="{{ $kampus->Nama_Kampus }}">{{ $kampus->Nama_Kampus }}</option>
                         @endforeach
                         {{-- <option value="" selected><br>Pilih tujuan</option> --}}
                     </select>
                     <label for="pickup">Penjemputan</label>
-                    <select id="pickup">
+                    <select id="pickup" name="Penjemputan">
                         <option value="" selected disabled>Pilih Penjemputan</option>
                         @foreach ($kampuss as $kampus)
-                            <option value="{{ $kampus->Kampus_id }}">{{ $kampus->Nama_Kampus }}</option>
+                            <option value="{{ $kampus->Nama_Kampus }}">{{ $kampus->Nama_Kampus }}</option>
                         @endforeach
                         {{-- <option value="" selected>Pilih penjemputan</option> --}}
                     </select>
                     <label for="travel-date">Waktu Perjalanan</label>
                     <div class="travel-time">
-                        <input type="date" id="travel-date">
-                        <input type="time" id="travel-time">
+                        <input type="date" id="travel-date" name="Tanggal">
+                        <input type="time" id="travel-time" name="Jam">
                     </div>
                     <label for="notes">Catatan</label>
-                    <textarea id="notes" rows="3"></textarea>
+                    <textarea id="notes" name="catatan" rows="3"></textarea>
 
                     <button type="submit" class="btn">Pesan</button>
                 </form>

@@ -92,6 +92,7 @@ class UserController extends Controller
         // validasi
         $request->validate([
             'npm' => 'required|integer',
+            'name'=>'required',
             'email' => 'required|email|unique:users,email',
             'nomor_handphone' => 'required|string|max:15',
             'password' => 'required|string|min:8',
@@ -104,6 +105,7 @@ class UserController extends Controller
 
         $user = new User;
         $user->npm = $request->npm;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->nomor_handphone = $request->nomor_handphone;
         $user->role = 'user';

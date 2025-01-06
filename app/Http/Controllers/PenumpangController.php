@@ -12,4 +12,7 @@ class PenumpangController extends Controller
         $kampuss = Master_Location::all();
         return view('order',compact('kampuss'));
     }
+    public function create(Request $request){
+        dd($request->all());
+    }
 }

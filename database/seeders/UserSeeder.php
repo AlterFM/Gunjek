@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'npm' => '50422069',
+            'name'=>'Admin GunadarmaOjek',
             'email' => 'admingunjek@gmail.com',
             'nomor_handphone' => '081905157614' ,
             'role'=>'admin',
