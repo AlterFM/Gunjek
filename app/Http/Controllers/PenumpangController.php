@@ -41,6 +41,18 @@ class PenumpangController extends Controller
             ]);
         }
 
+        $kampusdriver = Tarif::where('status', 'on')->get();
+        $tarif = $kampusdriver->first(); // Atau sesuaikan jika Anda ingin memilih driver tertentu
+        $existingOrder = Pesan::where('id_user', $user->id)
+            ->where('Tarif_id', $tarif->Tarif_id)
+            ->exists();
+
+        if ($existingOrder) {
+            return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
+        }
+
+
+
         // Simpan data ke dalam tabel `pesans`
         $pesan = new Pesan;
         $pesan->pesans_id = (string) Str::uuid(); // Menggunakan UUID
@@ -72,6 +84,13 @@ class PenumpangController extends Controller
 
         // Ambil tarif pertama dari data yang ada
         $tarif = $kampusdriver->first(); // Atau sesuaikan jika Anda ingin memilih driver tertentu
+        $existingOrder = Pesan::where('id_user', $user->id)
+            ->where('Tarif_id', $tarif->Tarif_id)
+            ->exists();
+
+        if ($existingOrder) {
+            return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
+        }
 
         // Membuat pemesanan otomatis
         $pesan = new Pesan;

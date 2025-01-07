@@ -83,12 +83,20 @@
                                 <p>{{$item->user->email}}</p>
                             </div>
                             <div class="passenger-actions">
-                                <button class="accept-btn" data-id="${passenger.id}">Terima</button>
-                                <button class="reject-btn" data-id="${passenger.id}">Tolak</button>
+                                <form action="{{url('acceptuser',$item->pesans_id)}}" method="post">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="accept-btn">Terima</button>
+                                </form>
+                                <form action="{{url('declineuser',$item->pesans_id)}}" onsubmit="return confirm('are you sure?')" method="post">
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="reject-btn">Tolak</button>
+                                </form>
                             </div>
                         </div>
                         @empty
-                            <p>belum ada yang mengorder ke anda</p>
+                            <p>belum ada yang mengorder langsung ke anda</p>
                         @endforelse
 
                         <p>Status Anda :

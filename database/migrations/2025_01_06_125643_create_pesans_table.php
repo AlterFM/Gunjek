@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('id_user')->nullable();
             $table->foreignUuid('Tarif_id')->nullable();
             $table->enum('metode_daftar',['auto','manual'])->nullable();
-            $table->enum('status',['terima','tolak'])->nullable();
+            $table->enum('status',['tunggu','terima'])->default('tunggu')->nullable();
             $table->timestamps();
         });        
     }

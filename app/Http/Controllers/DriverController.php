@@ -6,6 +6,7 @@ use App\Models\Master_Driver;
 use App\Models\Master_Location;
 use App\Models\Pesan;
 use App\Models\Tarif;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,9 +17,9 @@ class DriverController extends Controller
         $tarifs = Tarif::with('user')->get();
         $drivers = Master_Driver::with('user')->get(); // mengambil data driver beserta user terkait
         $kampuss = Master_Location::all();
-        $pesansauto = Pesan::where('metode_daftar','auto')->get();
-        $pesansman = Pesan::where('metode_daftar','manual')->get();
-        return view('driver', compact('drivers','kampuss','tarifs','pesansauto','pesansman'));
+        $pesansauto = Pesan::where('metode_daftar', 'auto')->get();
+        $pesansman = Pesan::where('metode_daftar', 'manual')->get();
+        return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman'));
     }
     public function update(Request $request, $driver_id)
     {
@@ -44,7 +45,8 @@ class DriverController extends Controller
         $driver->save();
         return redirect()->back()->with('status', 'Selamat Anda Telah Terdaftar');
     }
-    public function order(Request $request,$Tarif_id){
+    public function order(Request $request, $Tarif_id)
+    {
         // dd($id_user);
         $request->validate([
             'Tujuan' => 'nullable|string|max:50',
@@ -75,10 +77,39 @@ class DriverController extends Controller
         $tarif->save();
         return redirect()->back()->with('status', 'Tujuan Aktif');
     }
-    public function status(Request $request,$Tarif_id){
+    public function status(Request $request, $Tarif_id)
+    {
         $tarifstatus = Tarif::findOrFail($Tarif_id);
         $tarifstatus->status = $request->status;
         $tarifstatus->save();
         return redirect()->back();
+    }
+    public function decline($pesans_id)
+    {
+        $pesanan = Pesan::findOrFail($pesans_id);
+        $pesanan->delete();
+        return redirect()->back();
+    }
+    public function accept(Request $request, $pesans_id)
+    {
+        // dd($pesans_id);
+        $pesanan = Pesan::findOrFail($pesans_id);
+        $pesanan->status = 'terima';
+        $pesanan->save();
+
+        $driver = Master_Driver::where('id_user', Auth::id())->first();
+
+        if (!$driver) {
+            return redirect()->back()->withErrors(['error' => 'Anda belum terdaftar sebagai driver.']);
+        }
+
+        $transaksi = new Transaksi;
+        $transaksi->pesanan_id = $pesanan->pesans_id;
+        $transaksi->user_id = $pesanan->user->id;
+        $transaksi->Driver_id = $driver->driver_id;
+        $transaksi->Penjemputan = $pesanan->Penjemputan;
+        $transaksi->Tujuan = $pesanan->Tujuan;
+        $transaksi->save();
+        return redirect()->back()->with('status', 'segera antarkan penumpang sampai tujuan');
     }
 }

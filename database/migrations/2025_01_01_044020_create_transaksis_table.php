@@ -15,10 +15,15 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id(); // Primary key dengan auto_increment
-            $table->unsignedBigInteger('Transportasi_id'); // Kolom foreign key tanpa auto_increment
-            $table->unsignedBigInteger('user_id'); // Kolom foreign key tanpa auto_increment
-            $table->unsignedBigInteger('Driver_id'); // Kolom foreign key tanpa auto_increment
-            $table->unsignedBigInteger('Kampus_id'); // Kolom foreign key tanpa auto_increment
+            // $table->foreignUuid('Transportasi_id');
+            $table->foreignUuid('pesanan_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreignUuid('Driver_id');
+            // $table->foreignUuid('Kampus_id');
+            // $table->foreignUuid('Kampuss_id');
+            $table->string('Penjemputan');
+            $table->string('Tujuan');
+            $table->enum('metode_pembayaran',['tunai','non-tunai']);
             $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
