@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -14,16 +14,31 @@
             <div class="logo">
                 <img src="./static/image/LOGO.png" alt="logo">
             </div>
-            <ul class="listoflinks">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="driver.html">Driver</a></li>
-                <li><a href="lokasi.html">Lokasi</a></li>
-                <li><a href="helpuser.html">Bantuan</a></li>
-              </ul>
-            <div class="profile-user">
-                <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
+            <div class="navlinks">
+                <ul class="listoflinks">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="driver.html">Driver</a></li>
+                    <li><a href="lokasi.html">Lokasi</a></li>
+                    <li><a href="helpuser.html">Bantuan</a></li>
+                  </ul>
             </div>
+            <!-- <div class="btn_masuk" id="btn_masuk">
+                <button id="show-login">Masuk</button>
+            </div> -->
+            <div class="profile-info" id="profile-info">
+                <div class="profile-user" name="profile-user">
+                    <img src="./static/image/user_male.png" alt="driverlogo" class="userlogo">
+                </div>
+                <div class="profile-name">
+                    <p name="profile-name">John Doe</p>
+                    <p name="profile-npm">51422646</p>
+                </div>
+                <div>
+                    <button id="logout-button">Logout</button>
+                </div>
+            </div>
+
         </div>
     </header>
     <div class="container">

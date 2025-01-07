@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 /* Laptop */
 @media (max-width: 1366px) {
@@ -53,8 +54,11 @@ header {
 .Navbar {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: transparent 0,2;
+    justify-content: space-around;
+}
+
+.navlinks {
+    margin-left: 8%;
 }
 
 .listoflinks {
@@ -70,7 +74,7 @@ header {
 
 .listoflinks a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     color: #fff; 
     padding: 10px 20px;
     width: 512px;
@@ -92,7 +96,6 @@ header {
 #profile-info {
     background-color: transparent;
     display: flex;
-    gap: 20px;
     align-items: center;
 }
 .profile-user img{
@@ -107,11 +110,16 @@ header {
 .profile-user img:hover {
     background-color: #fff; 
 }
-
+.profile-user {
+    display: flex;
+    align-items: center;
+}
 .profile-name {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
+    margin-right: 20px;
+    margin-left: 5px;
 }
 
 
@@ -123,7 +131,7 @@ header {
     font-size: 16px;
     font-weight: bold;
     color: #fff; /* White text color */
-    background-color: #e74c3c; /* Red background color */
+    background-color: black; /* Red background color */
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
@@ -132,7 +140,8 @@ header {
 
 /* Hover effect for the logout button */
 #logout-button:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #fff; /* Darker red on hover */
+    color: black;
 }
 
 
@@ -541,65 +550,71 @@ input:checked + .slider:before {
         text-align: center;
         cursor: pointer;
     }
-    /* General styling for the section */
+
     .locations-section {
         text-align: center;
-        width: auto;
-        margin: auto;
-        background-color: #FFBD59; /* Yellow background */
-        padding-left: 22.3%;
-        height: 126.063rem;
+        background-color: #FFBD59;
+        padding: 50px 0;
+        justify-content: center;
+    }
 
-    }
-    
     .locations-section h2 {
-        font-size: 40px;
-        color: #000000; /* White text */
-        margin-bottom: 20px;
-        padding-top: 7.438rem;
-        padding-bottom: 2rem;
+        font-size: 30px;
+        color: #000;
+        margin: 0;
+        padding-bottom: 40px;
     }
-    
+
+    .locations-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: #000;
+    }
+
     .location-item {
         display: flex;
-        align-items: flex-start; /* Menyusun elemen secara vertikal dari atas */
-        margin-bottom: 20px;
-        border-bottom: 1px solid transparent;
-        padding-bottom: 15px;
+        align-items: center;
+        /* background: linear-gradient(to bottom, #D428D7 10%, #0e8888); */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 600px;
+
     }
-    
+
+    .location-item img {
+        width: 70%;
+        height: auto;
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+
     .location-info {
-        flex: 1; /* Membuat elemen ini mengambil sisa ruang di sebelah gambar */
+        text-align: left;
     }
-    
+
     .location-info h4 {
-        font-size: 25px;
-        margin-top: 15%;
-        margin-left: 15%;
-        color: #ffffff;
-        padding: 10px;
-        text-align: left;
+        font-size: 20px;
+        color: #000;
     }
-    
+
     .location-info p {
-        font-size: 15px;
-        margin-left: 15%;
-        color: #ffffff;
-        margin-top: 5px;
-        padding: 10px;
-        text-align: left;
+        font-size: 16px;
+        color: #000;
     }
     
     .btn_lainnya {
-        background-color: #fff;
+        background-color: #D428D7;
         color: #FFBD59;
         border: none;
-        width: 152px;
-        height: 52px;
         font-size: 18px;
         font-weight: bold;
-        margin-right: 50%;
-        margin-top: 5%;
+        margin: 20px auto; 
+        display: block; /* Ensure the button is a block element */
+        padding: 10px 15px;
     }
     
     .btn_lainnya:hover {
@@ -610,20 +625,20 @@ input:checked + .slider:before {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         padding: 20px;
+        align-items: center;
         background: linear-gradient(to top, #540088 40%, #FFBD59);
         color: white;
-        height: 60.813rem;
+        height: auto;
     }
     footer .logofooter {
         margin-bottom: 2rem;
-        margin-left: -48%;
+        margin-left: 0;
     }
     
     footer img {
-        width: 16.625rem;
-        height: 15.938rem;
+        width: 10rem;
+        height: auto;
     }
     
     footer ul {
@@ -656,7 +671,7 @@ input:checked + .slider:before {
     footer p {
         margin: 5px 0;
         font-size: 25px;
-        margin-top: 10%;
+        margin-top: 2rem;
         text-align: center;
     }
     

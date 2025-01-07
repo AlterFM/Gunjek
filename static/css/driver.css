@@ -72,10 +72,57 @@ header {
     width: 125px;
     height: 121px;
 }
-.profile-driver img{
+#profile-info {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.profile-user img{
     width: 100%;
     height: auto;
+    border: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s; 
+    border-radius: 50%;
+    margin-top: 10%;
+}  
+.profile-user img:hover {
+    background-color: #fff; 
 }
+.profile-user {
+    display: flex;
+    align-items: center;
+}
+.profile-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+
+/* Styling for the logout button */
+#logout-button {
+    display: block;
+    width: 100%; /* Full width button */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* White text color */
+    background-color: black; /* Red background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for the logout button */
+#logout-button:hover {
+    background-color: #fff; /* Darker red on hover */
+    color: black;
+}
+
 /* Daftar Perjalanan */
 .container {
     display: flex;

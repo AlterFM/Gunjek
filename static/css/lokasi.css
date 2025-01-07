@@ -66,89 +66,132 @@ header {
     height: 121px;
 }
 
-.profile-driver img{
+#profile-info {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.profile-user img{
     width: 100%;
     height: auto;
+    border: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s; 
+    border-radius: 50%;
+    margin-top: 10%;
+}  
+.profile-user img:hover {
+    background-color: #fff; 
 }
+.profile-user {
+    display: flex;
+    align-items: center;
+}
+.profile-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+
+/* Styling for the logout button */
+#logout-button {
+    display: block;
+    width: 100%; /* Full width button */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* White text color */
+    background-color: black; /* Red background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for the logout button */
+#logout-button:hover {
+    background-color: #fff; /* Darker red on hover */
+    color: black;
+}
+
+
 
 .locations-section {
     text-align: center;
-    width: auto;
-    margin: auto;
-    background-color: #FFBD59; /* Yellow background */
-    padding-left: 15%;
-    height: 230rem;
-
+    background-color: #FFBD59;
+    padding: 50px 0;
+    justify-content: center;
 }
 
 .locations-section h2 {
+    font-size: 30px;
+    color: #000;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.locations-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    font-size: 40px;
-    color: #000000; /* Black text */
-    margin-bottom: 20px;
-    padding-top: 7.438rem;
-    padding-bottom: 2rem;
-    align-items: center; /* Center vertically */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: #000;
 }
 
 .location-item {
     display: flex;
-    align-items: flex-start; /* Menyusun elemen secara vertikal dari atas */
-    margin-bottom: 20px;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 15px;
+    align-items: center;
+    /* background: linear-gradient(to bottom, #D428D7 10%, #0e8888); */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+
 }
+
 .location-item img {
-    width: 500px;
-    height: 350px;
+    width: 60%;
+    height: auto;
     border-radius: 10px;
     margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .location-info {
-    flex: 1; /* Membuat elemen ini mengambil sisa ruang di sebelah gambar */
+    text-align: left;
 }
 
 .location-info h4 {
-    font-size: 25px;
-    margin-top: 15%;
-    margin-left: 15%;
-    color: #ffffff;
-    padding: 10px;
-    text-align: left;
+    font-size: 20px;
+    color: #000;
 }
 
 .location-info p {
-    font-size: 15px;
-    margin-left: 15%;
-    color: #ffffff;
-    margin-top: 5px;
-    padding: 10px;
-    text-align: left;
+    font-size: 16px;
+    color: #000;
 }
 
 footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 20px;
+    align-items: center;
     background: linear-gradient(to top, #540088 40%, #FFBD59);
     color: white;
-    height: 60.813rem;
+    height: auto;
 }
 footer .logofooter {
     margin-bottom: 2rem;
-    margin-left: -48%;
+    margin-left: 0;
 }
 
 footer img {
-    width: 16.625rem;
-    height: 15.938rem;
+    width: 10rem;
+    height: auto;
 }
 
 footer ul {
@@ -181,6 +224,6 @@ footer h4 {
 footer p {
     margin: 5px 0;
     font-size: 25px;
-    margin-top: 10%;
+    margin-top: 2rem;
     text-align: center;
 }
