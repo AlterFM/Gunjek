@@ -20,6 +20,17 @@
         </div>
     </header>
     <div class="container">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if ($errors->has('error'))
+            <div class="alert alert-danger">
+                {{ $errors->first('error') }}
+            </div>
+        @endif
+
         <div class="container1">
             <div>
                 <div class="daftar-aktif">
@@ -32,124 +43,28 @@
             </div>
             <div class="list-aktif-container">
                 <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-                    </div>
-                </div>
-                <div class="list-aktif1">
-                    <div class="helmdriver">
-                        <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-driver">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                    <div class="pesan-btn">
-                        <button type="submit">Pesan</button>
-
-                    </div>
+                    @forelse ($kampusdriver as $item)
+                        <div class="helmdriver">
+                            <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
+                        </div>
+                        <div class="list-driver">
+                            <p><strong>From :</strong> {{ $item->Penjemputan }}</p>
+                            <p class="time">{{ $item->Jam }}</p>
+                            <p class="note_gender">{{ $item->catatan }}</p>
+                        </div>
+                        <div class="list-driver">
+                            <p><strong>To :</strong> {{ $item->Tujuan }}</p>
+                            <p><strong>Rp {{ $item->Harga }}</strong></p>
+                        </div>
+                        <div class="pesan-btn">
+                            <form action="{{url('orderauto')}}" method="post">
+                                @csrf
+                                <button type="submit">Pesan</button>
+                            </form>
+                        </div>
+                    @empty
+                        <p>Tidak ada driver yang aktif</p>
+                    @endforelse
                 </div>
                 <!-- Additional list-aktif1 items will be appended here dynamically -->
             </div>
@@ -300,7 +215,7 @@
                 </div>
             </div>
             <div class="form-section">
-                <form id="order-form" action="{{url('order-store')}}" method="POST">
+                <form id="order-form" action="{{ url('order-store') }}" method="POST">
                     @csrf
                     <label for="destination">Tujuan</label>
                     <select id="destination" name="Tujuan">

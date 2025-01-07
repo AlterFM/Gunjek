@@ -79,5 +79,6 @@ Route::middleware(['checkRole:user'])->group(function(){
     Route::controller(PenumpangController::class)->group(function(){
         Route::get('order','index');
         Route::post('order-store','create');
+        Route::post('orderauto','autocreate');
     });
 });

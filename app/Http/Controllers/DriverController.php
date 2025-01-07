@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Master_Driver;
 use App\Models\Master_Location;
+use App\Models\Pesan;
 use App\Models\Tarif;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,9 @@ class DriverController extends Controller
         $tarifs = Tarif::with('user')->get();
         $drivers = Master_Driver::with('user')->get(); // mengambil data driver beserta user terkait
         $kampuss = Master_Location::all();
-        return view('driver', compact('drivers','kampuss','tarifs'));
+        $pesansauto = Pesan::where('metode_daftar','auto')->get();
+        $pesansman = Pesan::where('metode_daftar','manual')->get();
+        return view('driver', compact('drivers','kampuss','tarifs','pesansauto','pesansman'));
     }
     public function update(Request $request, $driver_id)
     {

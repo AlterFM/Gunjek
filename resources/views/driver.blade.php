@@ -62,17 +62,35 @@
                         </div>
                         @foreach ($tarifs as $tarif)
                             <div class="list-driver">
-                                <p><strong>From :</strong> {{ $tarif->Tujuan }}</p>
+                                <p><strong>From :</strong> {{ $tarif->Penjemputan }}</p>
                                 <p class="time">{{ $tarif->Jam }}</p>
                                 <p class="note_gender">Khusus Pria/Wanita</p>
                             </div>
                             <div class="list-driver">
-                                <p><strong>To :</strong> {{ $tarif->Penjemputan }}</p>
+                                <p><strong>To :</strong> {{ $tarif->Tujuan }}</p>
                                 <p><strong>Rp {{ $tarif->Harga }}</strong></p>
                             </div>
 
                     </div>
                     <div id="passenger-list-container" class="passenger-list-container">
+                        <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
+                        {{-- buat user yang daftar secara otomatis --}}
+                        @forelse ($pesansauto as $item)
+                        <div class="passenger-info passenger-card">
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="Avatar Penumpang" class="avatar">
+                            <div>
+                                <p><strong>{{$item->user->name}}</strong></p>
+                                <p>{{$item->user->email}}</p>
+                            </div>
+                            <div class="passenger-actions">
+                                <button class="accept-btn" data-id="${passenger.id}">Terima</button>
+                                <button class="reject-btn" data-id="${passenger.id}">Tolak</button>
+                            </div>
+                        </div>
+                        @empty
+                            <p>belum ada yang mengorder ke anda</p>
+                        @endforelse
+
                         <p>Status Anda :
                         <form action="{{ url('statusdriver', $tarif->Tarif_id) }}" method="post" id="statusForm">
                             @csrf
@@ -85,18 +103,35 @@
                             </select>
                         </form>
                         </p>
-                        <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
-                        <div class="passenger-info passenger-card">
-                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="Avatar Penumpang" class="avatar">
-                            <div>
-                                <p><strong>${passenger.npm}</strong></p>
-                                <p>${passenger.email}</p>
+                        @forelse ($pesansman as $item)
+                        <div class="card-content">
+                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                            <div class="list-riwayat">
+                                <p><strong>From :</strong> {{$item->Penjemputan}}</p>
+                                <p class="time">{{$item->Jam}}</p>
+                                <p class="note_gender">{{$item->catatan}}</p>
+                            </div>
+                            <div class="list-riwayat passenger-actions">
+                                <p><strong>To :</strong>{{$item->Tujuan}}</p>
+                                <button class="accept-btn" data-id="${passenger.id}">Terima</button>
                             </div>
                         </div>
-                        <div class="passenger-actions">
-                            <button class="accept-btn" data-id="${passenger.id}">Terima</button>
-                            <button class="reject-btn" data-id="${passenger.id}">Tolak</button>
-                        </div>
+                        {{-- <div class="passenger-info passenger-card">
+                            <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="Avatar Penumpang" class="avatar">
+                            <div>
+                                <p><strong>{{$item->user->name}}</strong></p>
+                                <p>{{$item->user->email}}</p>
+                            </div>
+                            <div class="passenger-actions">
+                                <button class="accept-btn" data-id="${passenger.id}">Terima</button>
+                            </div>
+                        </div> --}}
+                        @empty
+                            <p>belum ada yang mengorder ke anda</p>
+                        @endforelse
+
+                        {{-- buat user yang daftar secara manual --}}
+                        
                     </div>
             @endforeach
             <div class="active-order" style="display: none;">

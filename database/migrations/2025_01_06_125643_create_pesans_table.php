@@ -22,6 +22,8 @@ return new class extends Migration
             $table->longText('catatan')->nullable();
             $table->integer('id_user')->nullable();
             $table->foreignUuid('Tarif_id')->nullable();
+            $table->enum('metode_daftar',['auto','manual'])->nullable();
+            $table->enum('status',['terima','tolak'])->nullable();
             $table->timestamps();
         });        
     }

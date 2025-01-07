@@ -52,4 +52,7 @@ class User extends Authenticatable
     public function tarif(){
         return $this->hasOne(Tarif::class);
     }
+    public function pesans(){
+        return $this->hasOne(Pesan::class);
+    }
 }
