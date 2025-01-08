@@ -17,9 +17,11 @@ class DriverController extends Controller
         $tarifs = Tarif::with('user')->get();
         $drivers = Master_Driver::with('user')->get(); // mengambil data driver beserta user terkait
         $kampuss = Master_Location::all();
+        $driver = Master_Driver::where('id_user', Auth::id())->first();
+        $transaksis = Transaksi::where('Driver_id',$driver->driver_id)->get();
         $pesansauto = Pesan::where('metode_daftar', 'auto')->get();
         $pesansman = Pesan::where('metode_daftar', 'manual')->get();
-        return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman'));
+        return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman','transaksis'));
     }
     public function update(Request $request, $driver_id)
     {

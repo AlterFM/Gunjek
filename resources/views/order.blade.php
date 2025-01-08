@@ -99,120 +99,28 @@
                 <button class="tab" id="history-tab">Riwayat</button>
             </div>
             <div class="history">
+                @forelse ($transaksis as $item)
                 <div class="card">
+                    {{-- make for history --}}
                     <div class="card-content">
                         <div>
                             <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                         </div>
                         <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
+                            <p><strong>From :</strong>{{$item->Penjemputan}}</p>
+                            <p class="time">{{$item->pesan->Jam}}</p>
+                            <p class="note_gender">{{$item->pesan->catatan}}</p>
                         </div>
                         <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
+                            <p><strong>To :</strong> {{$item->Tujuan}}</p>
+                            <p><strong>Rp {{$item->pesan->tarif->Harga}}</strong></p>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div>
-                            <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>From :</strong> Kampus E</p>
-                            <p class="time">11.50</p>
-                            <p class="note_gender">Khusus Pria/Wanita</p>
-                        </div>
-                        <div class="list-riwayat">
-                            <p><strong>To :</strong> Kampus F8</p>
-                            <p><strong>Rp 7000</strong></p>
-                        </div>
-                    </div>
+                    {{-- make for history --}}
                 </div>
+                @empty
+                    <p>anda belum pesan samsek</p>
+                @endforelse
             </div>
             <div class="form-section">
                 <form id="order-form" action="{{ url('order-store') }}" method="POST">

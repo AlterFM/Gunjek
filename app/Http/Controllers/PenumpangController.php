@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Master_Location;
 use App\Models\Pesan;
 use App\Models\Tarif;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -16,7 +17,8 @@ class PenumpangController extends Controller
     {
         $kampuss = Master_Location::latest()->paginate();
         $kampusdriver = Tarif::where('status', 'on')->get();
-        return view('order', compact('kampuss', 'kampusdriver'));
+        $transaksis = Transaksi::where('user_id',Auth::id())->get();
+        return view('order', compact('kampuss', 'kampusdriver','transaksis'));
     }
     // daftar manual
     public function create(Request $request)

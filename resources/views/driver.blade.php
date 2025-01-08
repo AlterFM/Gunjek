@@ -170,7 +170,23 @@
         </div>
         <div class="history">
             <div class="card">
+                @forelse ($transaksis as $item)
                 <div class="card-content">
+                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
+                    <div class="list-riwayat">
+                        <p><strong>From :</strong> {{$item->Penjemputan}}</p>
+                        <p class="time">{{$item->pesan->Jam}}</p>
+                        <p class="note_gender">{{$item->pesan->catatan}}</p>
+                    </div>
+                    <div class="list-riwayat">
+                        <p><strong>To :</strong>  {{$item->Tujuan}}</p>
+                        <p><strong>Rp {{$item->pesan->tarif->Harga}}</strong></p>
+                    </div>
+                </div>
+                @empty
+                    <p>kosong</p>
+                @endforelse
+                {{-- <div class="card-content">
                     <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
                     <div class="list-riwayat">
                         <p><strong>From :</strong> Kampus E</p>
@@ -217,19 +233,7 @@
                         <p><strong>To :</strong> Kampus F8</p>
                         <p><strong>Rp 7000</strong></p>
                     </div>
-                </div>
-                <div class="card-content">
-                    <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">
-                    <div class="list-riwayat">
-                        <p><strong>From :</strong> Kampus E</p>
-                        <p class="time">11.50</p>
-                        <p class="note_gender">Khusus Pria/Wanita</p>
-                    </div>
-                    <div class="list-riwayat">
-                        <p><strong>To :</strong> Kampus F8</p>
-                        <p><strong>Rp 7000</strong></p>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="form-section">
