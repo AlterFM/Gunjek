@@ -70,7 +70,7 @@
                                 <p><strong>To :</strong> {{ $tarif->Tujuan }}</p>
                                 <p><strong>Rp {{ $tarif->Harga }}</strong></p>
                             </div>
-
+                            {{-- batas --}}
                     </div>
                     <div id="passenger-list-container" class="passenger-list-container">
                         <!-- Penumpang akan dimasukkan di sini secara dinamis data dummy di driver.js-->
