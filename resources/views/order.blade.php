@@ -157,7 +157,7 @@
         </div>
     </div>
     <footer>
-        <p>Gunjek 2025</p>
+        <p>Gunjek {{ date('Y') }}</p>
     </footer>
     <!-- javascript -->
     <script src="{{ asset('Gunjek/static/js/order.js') }}"></script>

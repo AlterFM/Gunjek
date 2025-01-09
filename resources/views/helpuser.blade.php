@@ -117,7 +117,7 @@
                 <p>Bantuan</p>
             </div>
         </ul>
-        <p>Gunadarma Ojek 2024</p>
+        <p>Gunadarma Ojek {{ date('Y') }}</p>
     </footer>
 </body>
 </html>

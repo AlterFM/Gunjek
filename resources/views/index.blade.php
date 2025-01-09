@@ -328,7 +328,7 @@
                 <p>Bantuan</p>
             </div>
         </ul>
-        <p>Gunjek 2025</p>
+        <p>Gunjek {{ date('Y') }}</p>
     </footer>
     <script src="{{ asset('Gunjek/static/js/login.js') }}"></script>
 </body>
