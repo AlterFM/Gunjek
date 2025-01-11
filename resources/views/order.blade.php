@@ -69,7 +69,8 @@
                 <!-- Additional list-aktif1 items will be appended here dynamically -->
             </div>
             <!-- Additional rides -->
-            <div class="active-order" style="display: none;">
+            {{-- <div class="active-order" style="display: block;">
+                @foreach ($kampusdriver as $item)
                 <div class="order-awaiting">
                     <h3>Pesanan anda sedang diproses</h3>
                 </div>
@@ -78,19 +79,20 @@
                 </div>
                 <div class="order-details">
                     <div class="order-info1">
-                        <p><strong>Dari:</strong> <span id="active-from"></span></p>
+                        <p><strong>Dari:</strong> <span id="active-from">{{$item->Penjemputan}}</span></p>
                         <img src="{{ asset('Gunjek/static/image/order_aktif.png') }}" alt="order_aktif">
-                        <p><strong>Menuju:</strong> <span id="active-to"></span></p>
+                        <p><strong>Menuju:</strong> <span id="active-to"></span>{{$item->Tujuan}}</p>
                     </div>
                     <div class="order-info2">
-                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name"></span></p>
-                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan"></span></p>
-                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time"></span></p>
-                        <p><strong>Tarif:</strong> <span id="active-tarif"></span></p>
+                        <p><strong>Nama Pengemudi:</strong> <span id="active-driver-name">{{$item->user->name}}</span></p>
+                        <p><strong>Nomor Kendaraan:</strong> <span id="nomor-kendaraan">{{$item->user->master_driver->Nomor_Kendaraan}}</span></p>
+                        <p><strong>Waktu penjemputan:</strong> <span id="travel-time">{{$item->Jam}}</span></p>
+                        <p><strong>Tarif:</strong> <span id="active-tarif">{{$item->Harga}}</span></p>
                     </div>
+                    @endforeach
                 </div>
                 <button class="cancel-btn" id="cancel-order">Batalkan Pesanan</button>
-            </div>
+            </div> --}}
 
         </div>
         <div class="container2">

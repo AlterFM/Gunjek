@@ -103,10 +103,10 @@
                         <form action="{{ url('statusdriver', $tarif->Tarif_id) }}" method="post" id="statusForm">
                             @csrf
                             @method('PUT')
-                            <select name="status" id="status"
+                            <select name="status_driver" id="status"
                                 onchange="document.getElementById('statusForm').submit()">
-                                <option value="on"{{ $tarif->status === 'on' ? 'selected' : '' }}>Aktif</option>
-                                <option value="off" {{ $tarif->status === 'off' ? 'selected' : '' }}>Tidak Aktif
+                                <option value="on"{{ $tarif->status_driver === 'on' ? 'selected' : '' }}>Aktif</option>
+                                <option value="off" {{ $tarif->status_driver === 'off' ? 'selected' : '' }}>Tidak Aktif
                                 </option>
                             </select>
                         </form>

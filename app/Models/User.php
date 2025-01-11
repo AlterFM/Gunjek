@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     // relasi user
     public function master_driver(){
-        return $this->hasOne(Master_Driver::class);
+        return $this->hasOne(Master_Driver::class,'id_user');
     }
     public function tarif(){
         return $this->hasOne(Tarif::class);

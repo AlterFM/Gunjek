@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('Jam', 50)->nullable();
             $table->date('Tanggal')->nullable();
             $table->longText('catatan')->nullable();
-            $table->enum('status',['off','on'])->nullable();
+            $table->enum('status_driver',['off','on'])->default('off')->nullable();
+            $table->enum('get_order',['no','yes'])->default('no')->nullable();
             $table->integer('id_user')->nullable();
             $table->timestamps();
         });

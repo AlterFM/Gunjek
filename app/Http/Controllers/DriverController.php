@@ -19,8 +19,8 @@ class DriverController extends Controller
         $kampuss = Master_Location::all();
         $driver = Master_Driver::where('id_user', Auth::id())->first();
         $transaksis = Transaksi::where('Driver_id',$driver->driver_id)->get();
-        $pesansauto = Pesan::where('metode_daftar', 'auto')->get();
-        $pesansman = Pesan::where('metode_daftar', 'manual')->get();
+        $pesansauto = Pesan::where('metode_daftar', 'auto')->where('status','tunggu')->get();
+        $pesansman = Pesan::where('metode_daftar', 'manual')->where('status','tunggu')->get();
         return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman','transaksis'));
     }
     public function update(Request $request, $driver_id)
@@ -75,6 +75,7 @@ class DriverController extends Controller
         if ($request->catatan) {
             $tarif->catatan = $request->catatan;
         }
+        $tarif->get_order = 'no';
         $tarif->id_user = Auth::id();
         $tarif->save();
         return redirect()->back()->with('status', 'Tujuan Aktif');
@@ -82,7 +83,7 @@ class DriverController extends Controller
     public function status(Request $request, $Tarif_id)
     {
         $tarifstatus = Tarif::findOrFail($Tarif_id);
-        $tarifstatus->status = $request->status;
+        $tarifstatus->status_driver = $request->status_driver;
         $tarifstatus->save();
         return redirect()->back();
     }
@@ -98,6 +99,13 @@ class DriverController extends Controller
         $pesanan = Pesan::findOrFail($pesans_id);
         $pesanan->status = 'terima';
         $pesanan->save();
+
+        $datatarif = $pesanan->Tarif_id;
+
+        $tarif = Tarif::findOrFail($datatarif);
+        $tarif->get_order = 'yes';
+        $tarif->save();
+
 
         $driver = Master_Driver::where('id_user', Auth::id())->first();
 

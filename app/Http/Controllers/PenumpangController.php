@@ -16,7 +16,7 @@ class PenumpangController extends Controller
     public function index()
     {
         $kampuss = Master_Location::latest()->paginate();
-        $kampusdriver = Tarif::where('status', 'on')->get();
+        $kampusdriver = Tarif::where('status_driver', 'on')->get();
         $transaksis = Transaksi::where('user_id',Auth::id())->get();
         return view('order', compact('kampuss', 'kampusdriver','transaksis'));
     }
@@ -43,15 +43,15 @@ class PenumpangController extends Controller
             ]);
         }
 
-        $kampusdriver = Tarif::where('status', 'on')->get();
-        $tarif = $kampusdriver->first(); // Atau sesuaikan jika Anda ingin memilih driver tertentu
-        $existingOrder = Pesan::where('id_user', $user->id)
-            ->where('Tarif_id', $tarif->Tarif_id)
-            ->exists();
+        // $kampusdriver = Tarif::where('status', 'on')->get();
+        // $tarif = $kampusdriver->first(); // Atau sesuaikan jika Anda ingin memilih driver tertentu
+        // $existingOrder = Pesan::where('id_user', $user->id)
+        //     ->where('Tarif_id', $tarif->Tarif_id)
+        //     ->exists();
 
-        if ($existingOrder) {
-            return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
-        }
+        // if ($existingOrder) {
+        //     return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
+        // }
 
 
 
@@ -65,6 +65,7 @@ class PenumpangController extends Controller
         $pesan->catatan = $validated['catatan'];
         // $pesan->Tarif_id = $user->tarif->Tarif_id;
         $pesan->metode_daftar = 'manual';
+        $pesan->status = 'tunggu';
         $pesan->id_user = $user->id;
         $pesan->save();
         return redirect()->back()->with('status', 'Permintaan Berhasil Terkirim');
@@ -74,7 +75,7 @@ class PenumpangController extends Controller
     public function autocreate(Request $request)
     {
         // Ambil data driver yang aktif
-        $kampusdriver = Tarif::where('status', 'on')->get();
+        $kampusdriver = Tarif::where('status_driver', 'on')->get();
 
         // Ambil data user yang sedang login
         $user = Auth::user();
@@ -86,13 +87,13 @@ class PenumpangController extends Controller
 
         // Ambil tarif pertama dari data yang ada
         $tarif = $kampusdriver->first(); // Atau sesuaikan jika Anda ingin memilih driver tertentu
-        $existingOrder = Pesan::where('id_user', $user->id)
-            ->where('Tarif_id', $tarif->Tarif_id)
-            ->exists();
+        // $existingOrder = Pesan::where('id_user', $user->id)
+        //     ->where('Tarif_id', $tarif->Tarif_id)
+        //     ->exists();
 
-        if ($existingOrder) {
-            return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
-        }
+        // if ($existingOrder) {
+        //     return redirect()->back()->withErrors(['error' => 'Anda sudah memesan driver ini.']);
+        // }
 
         // Membuat pemesanan otomatis
         $pesan = new Pesan;
@@ -104,6 +105,7 @@ class PenumpangController extends Controller
         $pesan->catatan = $tarif->catatan;
         $pesan->Tarif_id = $tarif->Tarif_id;
         $pesan->id_user = $user->id;
+        $pesan->status = 'tunggu';
         $pesan->metode_daftar = 'auto';
         // dd($pesan);
         $pesan->save();
