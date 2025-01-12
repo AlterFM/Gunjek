@@ -16,7 +16,7 @@ class PenumpangController extends Controller
     public function index()
     {
         $kampuss = Master_Location::latest()->paginate();
-        $kampusdriver = Tarif::where('status_driver', 'on')->get();
+        $kampusdriver = Tarif::where('status_driver', 'on')->where('get_order','no')->get();
         $transaksis = Transaksi::where('user_id',Auth::id())->get();
         return view('order', compact('kampuss', 'kampusdriver','transaksis'));
     }

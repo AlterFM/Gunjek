@@ -19,8 +19,8 @@ class DriverController extends Controller
         $kampuss = Master_Location::all();
         $driver = Master_Driver::where('id_user', Auth::id())->first();
         $transaksis = Transaksi::where('Driver_id',$driver->driver_id)->get();
-        $pesansauto = Pesan::where('metode_daftar', 'auto')->where('status','tunggu')->get();
-        $pesansman = Pesan::where('metode_daftar', 'manual')->where('status','tunggu')->get();
+        $pesansauto = Pesan::where('metode_daftar', 'auto')->whereNotIn('status', ['terima', 'selesai'])->get();
+        $pesansman = Pesan::where('metode_daftar', 'manual')->whereNotIn('status', ['terima', 'selesai'])->get();
         return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman','transaksis'));
     }
     public function update(Request $request, $driver_id)
@@ -80,6 +80,7 @@ class DriverController extends Controller
         $tarif->save();
         return redirect()->back()->with('status', 'Tujuan Aktif');
     }
+    // ini kalau drivernya mau narik
     public function status(Request $request, $Tarif_id)
     {
         $tarifstatus = Tarif::findOrFail($Tarif_id);
