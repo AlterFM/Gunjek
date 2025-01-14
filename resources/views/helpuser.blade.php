@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('Gunjek/static/css/helpuser.css')}}">
+    <link rel="stylesheet" href="{{ asset('Gunjek/static/css/helpuser.css') }}">
     <title>FAQ USER</title>
 </head>
 <body>
     <header>
-        <div class="Navbar"> 
-          @include('menu.navbar')
-            <div class="profile-driver">
-                <img src="{{asset('Gunjek/static/image/driverlogo.png')}}" alt="driverlogo" class="driverlogo">
-            </div>
+      <div class="Navbar">
+        @include('menu.navbar')
+
+        @guest
+        <div class="btn_masuk" id="btn_masuk">
+            <button id="show-login">Masuk</button>
         </div>
+        @endguest
+      </div>
     </header>
     <section class="faq-section">
         <h1 class="faq-title">Frequently Asked Questions</h1>
@@ -96,12 +99,12 @@
       </script>
     <footer> 
         <div class="logofooter">
-            <img src="{{asset('Gunjek/static/image/LOGO.png')}}" alt="logo">
+            <img src="{{ asset('Gunjek/static/image/LOGO.png') }}" alt="logo">
         </div>
         <ul>
             <div class="sosmed">
-                <img src="{{asset('Gunjek/static/image/Instagram Circle.png')}}" alt="instagram">
-                <img src="{{asset('Gunjek/static/image/TwitterX.png')}}" alt="twitter">
+                <img src="{{ asset('Gunjek/static/image/Instagram Circle.png') }}" alt="instagram">
+                <img src="{{ asset('Gunjek/static/image/TwitterX.png') }}" alt="twitter">
             </div>
             <div>
                 <h4>Informasi</h4>
@@ -117,7 +120,7 @@
                 <p>Bantuan</p>
             </div>
         </ul>
-        <p>Gunadarma Ojek {{ date('Y') }}</p>
+        <p>Gunadarma Ojek 2024</p>
     </footer>
 </body>
 </html>

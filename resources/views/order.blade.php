@@ -12,16 +12,21 @@
 
 <body>
     <header>
-        <div class="Navbar">
-            @include('menu.navbar')
-            <div class="profile-container">
-                <img src="{{ asset('Gunjek/static/image/male-user.png') }}" alt="profil" class="profile-picture">
+        <header>
+            <div class="Navbar"> 
+                @include('menu.navbar')
+    
+                @guest
+                <div class="btn_masuk" id="btn_masuk">
+                    <button id="show-login">Masuk</button>
+                </div>
+                @endguest
             </div>
-        </div>
+        </header>
     </header>
     <div class="container">
         @if (session('status'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="alert">
                 {{ session('status') }}
             </div>
         @endif
@@ -42,8 +47,8 @@
                 </div>
             </div>
             <div class="list-aktif-container">
+                @forelse ($kampusdriver as $item)
                 <div class="list-aktif1">
-                    @forelse ($kampusdriver as $item)
                         <div class="helmdriver">
                             <img src="{{ asset('Gunjek/static/image/helmhitam.png') }}" alt="logoperjalanan">
                         </div>
@@ -62,10 +67,11 @@
                                 <button type="submit">Pesan</button>
                             </form>
                         </div>
+                    </div>
                     @empty
-                        <p>Tidak ada driver yang aktif</p>
+                        <p class="driver-kosong">Tidak ada driver yang aktif</p>
                     @endforelse
-                </div>
+                    
                 <!-- Additional list-aktif1 items will be appended here dynamically -->
             </div>
             <!-- Additional rides -->
@@ -121,7 +127,7 @@
                     {{-- make for history --}}
                 </div>
                 @empty
-                    <p>anda belum pesan samsek</p>
+                    <p class="pesan-kosong">Anda belum memiliki pesanan</p>
                 @endforelse
             </div>
             <div class="form-section">

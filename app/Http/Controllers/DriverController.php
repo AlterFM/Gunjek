@@ -14,14 +14,14 @@ class DriverController extends Controller
 {
     public function index()
     {
-        $tarifs = Tarif::with('user')->get();
-        $drivers = Master_Driver::with('user')->get(); // mengambil data driver beserta user terkait
+        $tarifs = Tarif::where('id_user', Auth::id())->with('user')->get();
+        $drivers = Master_Driver::where('id_user', Auth::id())->with('user')->get();
         $kampuss = Master_Location::all();
         $driver = Master_Driver::where('id_user', Auth::id())->first();
-        $transaksis = Transaksi::where('Driver_id',$driver->driver_id)->get();
+        $transaksis = Transaksi::where('Driver_id', $driver->driver_id)->get();
         $pesansauto = Pesan::where('metode_daftar', 'auto')->whereNotIn('status', ['terima', 'selesai'])->get();
         $pesansman = Pesan::where('metode_daftar', 'manual')->whereNotIn('status', ['terima', 'selesai'])->get();
-        return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman','transaksis'));
+        return view('driver', compact('drivers', 'kampuss', 'tarifs', 'pesansauto', 'pesansman', 'transaksis'));
     }
     public function update(Request $request, $driver_id)
     {
@@ -85,6 +85,7 @@ class DriverController extends Controller
     {
         $tarifstatus = Tarif::findOrFail($Tarif_id);
         $tarifstatus->status_driver = $request->status_driver;
+
         $tarifstatus->save();
         return redirect()->back();
     }
@@ -122,5 +123,24 @@ class DriverController extends Controller
         $transaksi->Tujuan = $pesanan->Tujuan;
         $transaksi->save();
         return redirect()->back()->with('status', 'segera antarkan penumpang sampai tujuan');
+    }
+    // kodingan memassukan pembayaran user
+    public function payment(Request $request, $id)
+    {
+        // return $id;
+        $transaksi = Transaksi::findOrFail($id);
+
+        $pesanan = Pesan::findOrFail($transaksi->pesanan_id);
+        $pesanan->status = 'selesai';
+        $pesanan->save();
+
+        $datatarif = $pesanan->Tarif_id;
+        $tarif = Tarif::findOrFail($datatarif);
+        $tarif->get_order = 'no';
+        $tarif->save();
+
+        $transaksi->metode_pembayaran = $request->metode_pembayaran;
+        $transaksi->save();
+        return redirect()->back()->with('status', 'pembayaran berhasil');
     }
 }

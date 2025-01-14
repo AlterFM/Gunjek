@@ -14,25 +14,13 @@
 
         <div class="Navbar">
             @include('menu.navbar')
+
             @guest
             <div class="btn_masuk" id="btn_masuk">
                 <button id="show-login">Masuk</button>
             </div>
             @endguest
-            @auth
-            <div class="profile-user" id="profile-user">
-                <img src="{{asset('Gunjek/static/image/user_male.png')}}" alt="driverlogo" class="userlogo">
-            </div>
-            <div class="profile-info" id="profile-info">
-                <p id="profile-npm">NPM: {{Auth::user()->npm}}</p>
-                <form action="{{ url('/logout') }}" method="POST" style="display: inline;">
-                    @csrf
-                    <button type="submit" class="dropdown-item">
-                        <i class="align-middle me-1" data-feather="power"></i> Log out
-                    </button>
-                </form>          
-            </div>
-            @endauth
+
             <div class="popup">
                 <div class="close-btn">&times;</div>
                 <!-- User Login Form -->
@@ -111,7 +99,7 @@
                         <div class="form-element">
                             <label for="name-register">Nama</label>
                             <input type="text" id="name-register" name="name" class="name-register"
-                                placeholder="Masukkan NPM Anda">
+                                placeholder="Masukkan Nama Anda">
                         </div>
                         <div class="form-element">
                             <label for="npm-register">NPM</label>
@@ -126,7 +114,7 @@
                         <div class="form-element">
                             <label for="nomorhp-register">Nomor Telpon</label>
                             <input type="text" id="nomorhp-register" name="nomor_handphone"
-                                class="nomorhp-register" placeholder="Masukkan NPM Anda">
+                                class="nomorhp-register" placeholder="Masukkan Nomor Telpon Anda">
                         </div>
                         <div class="form-element">
                             <label for="password-register">Kata Sandi</label>
@@ -164,6 +152,10 @@
                     <form action="{{ url('registerdriver') }}" method="post">
                         @csrf
                         <div class="form-element">
+                            <label for="driver-name">Nama</label>
+                            <input type="text" id="driver-name" name="name" placeholder="Masukkan Nama Anda">
+                        </div>
+                        <div class="form-element">
                             <label for="driver-npm">NPM</label>
                             <input type="text" id="driver-npm" name="npm" placeholder="Masukkan NPM Anda">
                         </div>
@@ -173,7 +165,7 @@
                         </div>
                         <div class="form-element">
                             <label for="nomorhp-register">Nomor Telpon</label>
-                            <input type="text" id="nomorhp-register" name="nomor_handphone" placeholder="Masukkan NPM Anda">
+                            <input type="text" id="nomorhp-register" name="nomor_handphone" placeholder="Masukkan Nomor Telpon Anda">
                         </div>
                         <div class="form-element">
                             <label for="driver-password-register">Kata Sandi</label>
@@ -274,33 +266,35 @@
 
     <div class="locations-section">
         <h2>Pilihan lokasi yang tersedia</h2>
-        <div class="location-item">
-            <img src="{{ asset('Gunjek/static/image/kampusD.png') }}" alt="Kampus D">
-            <div class="location-info">
-                <h4>KAMPUS D</h4>
-                <p>Jl. Mangende Raya Pondok Cina, Depok</p>
+        <div class="locations-container">
+            <div class="location-item">
+                <img src="{{ asset('Gunjek/static/image/kampusD.png') }}" alt="Kampus D">
+                <div class="location-info">
+                    <h4>KAMPUS D</h4>
+                    <p>Jl. Mangende Raya Pondok Cina, Depok</p>
+                </div>
             </div>
-        </div>
-        <div class="location-item">
-            <img src="{{ asset('Gunjek/static/image/kampusE.png') }}" alt="Kampus E">
-            <div class="location-info">
-                <h4>KAMPUS E</h4>
-                <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
+            <div class="location-item">
+                <img src="{{ asset('Gunjek/static/image/kampusE.png') }}" alt="Kampus E">
+                <div class="location-info">
+                    <h4>KAMPUS E</h4>
+                    <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
+                </div>
             </div>
-        </div>
-        <div class="location-item">
-            <img src="{{ asset('Gunjek/static/image/kampusG.png') }}" alt="Kampus G">
-            <div class="location-info">
-                <h4>KAMPUS G</h4>
-                <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
+            <div class="location-item">
+                <img src="{{ asset('Gunjek/static/image/kampusG.png') }}" alt="Kampus G">
+                <div class="location-info">
+                    <h4>KAMPUS G</h4>
+                    <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
+                </div>
             </div>
-        </div>
-        <div class="location-item">
-            <img src="{{ asset('Gunjek/static/image/kampusH.png') }}" alt="Kampus H">
-            <div class="location-info">
-                <h4>KAMPUS H</h4>
-                <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
-                <button class="btn_lainnya" onclick="lokasi.html">Lainnya</button>
+            <div class="location-item">
+                <img src="{{ asset('Gunjek/static/image/kampusH.png') }}" alt="Kampus H">
+                <div class="location-info">
+                    <h4>KAMPUS H</h4>
+                    <p>Jl. Akses Kelapa Dua Kelapa Dua</p>
+                    <button class="btn_lainnya" onclick="lokasi.html">Lainnya</button>
+                </div>
             </div>
         </div>
     </div>

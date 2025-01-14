@@ -74,6 +74,7 @@ Route::middleware(['checkRole:driver'])->group(function(){
         Route::put('statusdriver/{Tarif_id}','status');
         Route::put('acceptuser/{pesans_id}','accept'); // kalau drivernya menerima
         Route::delete('declineuser/{pesans_id}','decline'); // kalau drivernya menolak
+        Route::put('payment/{id}','payment');
     });
 });
 

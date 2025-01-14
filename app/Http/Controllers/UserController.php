@@ -141,6 +141,7 @@ class UserController extends Controller
             'password' => 'required|string|min:8',
         ]);
         $user = new User;
+        $user->name = $request->name;
         $user->npm = $request->npm;
         $user->email = $request->email;
         $user->nomor_handphone = $request->nomor_handphone;

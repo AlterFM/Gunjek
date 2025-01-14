@@ -11,14 +11,12 @@
 
 <body>
     <header>
-        <div class="Navbar">
+        <div class="Navbar"> 
             @include('menu.navbar')
-            <div class="profile-driver">
-                <img src="{{ asset('Gunjek/static/image/driverlogo.png') }}" alt="driverlogo" class="driverlogo">
-            </div>
+
         </div>
         @if (session('status'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="alert">
                 {{ session('status') }}
             </div>
         @endif
@@ -28,7 +26,7 @@
             @if ($driver->Nomor_Kendaraan === null || $driver->Alamat === null || $driver->Foto_Diri === null)
                 <div class="card" style="width: 50rem;">
                     <div class="card-body">
-                        <h2 class="text-center text-capitalize">Silahkan isikan data drivernya disini</h2>
+                        <h2 class="text-center text-capitalize">Silahkan lengkapi data kendaraan Anda di sini</h2>
                         <form action="{{ url('driver-update', $driver->driver_id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
@@ -96,7 +94,7 @@
                             </div>
                         </div>
                         @empty
-                            <p>belum ada yang mengorder langsung ke anda</p>
+                            <p>Belum ada penumpang</p>
                         @endforelse
 
                         <p>Status Anda :
@@ -135,7 +133,7 @@
                             </div>
                         </div> --}}
                         @empty
-                            <p>belum ada yang mengorder ke anda</p>
+                            <p>Belum ada penumpang</p>
                         @endforelse
 
                         {{-- buat user yang daftar secara manual --}}
@@ -181,10 +179,23 @@
                     <div class="list-riwayat">
                         <p><strong>To :</strong>  {{$item->Tujuan}}</p>
                         <p><strong>Rp {{$item->pesan->tarif->Harga}}</strong></p>
+                        @if ($item->metode_pembayaran === null)
+                        <div class="passenger-action">
+                            <form action="{{url('payment',$item->id)}}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <select name="metode_pembayaran" id="metode_pembayaran">
+                                    <option value="tunai">Cash</option>
+                                    <option value="non-tunai">Without-Cash</option>
+                                </select>
+                                <button type="submit" class="accept-btn">Bayar</button>
+                            </form>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 @empty
-                    <p>kosong</p>
+                    <p>Belum ada riwayat</p>
                 @endforelse
                 {{-- <div class="card-content">
                     <img src="{{ asset('Gunjek/static/image/user_male.png') }}" alt="profil_user_riwayat">

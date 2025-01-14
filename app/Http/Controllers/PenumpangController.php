@@ -33,7 +33,7 @@ class PenumpangController extends Controller
         ]);
         $user = Auth::user();
 
-        $driver = Tarif::where('status', 'on') // Driver aktif
+        $driver = Tarif::where('status_driver', 'on') // Driver aktif
             ->where('Penjemputan', $validated['Penjemputan']) // Lokasi penjemputan
             ->first();
 
